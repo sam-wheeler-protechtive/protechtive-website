@@ -28,7 +28,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-4">
           <Link href="/blog" className="text-sm text-[#2D5F7A] hover:underline inline-flex items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
             </svg>
             All Posts

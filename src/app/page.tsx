@@ -7,7 +7,7 @@ const services = [
     description:
       "Executive-level security leadership without the full-time cost. We embed in your organization to build and lead your security program, manage risk, and align security with business goals.",
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg aria-hidden="true" className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
@@ -17,7 +17,7 @@ const services = [
     description:
       "Comprehensive evaluations of your security posture — risk assessments, gap analysis, penetration testing, and security program reviews that give you a clear picture of where you stand and what to fix.",
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg aria-hidden="true" className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
       </svg>
     ),
@@ -27,7 +27,7 @@ const services = [
     description:
       "Navigate the compliance landscape with confidence. We guide you through SOC 2 readiness, HIPAA compliance, and NIST framework alignment — from gap assessment to audit-ready documentation.",
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg aria-hidden="true" className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
       </svg>
     ),
@@ -37,7 +37,7 @@ const services = [
     description:
       "Design and implement a Zero Trust security model built for how your business actually works. We translate the framework into a practical roadmap — identity, network, data, and device security.",
     icon: (
-      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg aria-hidden="true" className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
       </svg>
     ),
@@ -59,7 +59,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#F5C022]/20 text-[#F5C022] text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-white/20 text-white text-xs font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
                 Cybersecurity Consulting
               </div>
               <h1 className="text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-6">
@@ -71,7 +71,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#F5C022] text-[#1E4057] font-bold px-6 py-3 rounded-lg hover:bg-[#FDD96A] transition-colors">
                   Get a Free Consultation
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>
@@ -152,7 +152,7 @@ export default function Home() {
                   "Practical, business-aligned security roadmaps",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
-                    <svg className="w-5 h-5 text-[#F5C022] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <svg aria-hidden="true" className="w-5 h-5 text-[#F5C022] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     {item}
@@ -184,7 +184,7 @@ export default function Home() {
           <p className="text-[#2D5F7A] mb-8 text-lg">Schedule a free, no-obligation consultation and let&rsquo;s talk about your biggest security challenges.</p>
           <Link href="/contact" className="inline-flex items-center gap-2 bg-[#1E4057] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#2D5F7A] transition-colors text-lg">
             Schedule a Free Consultation
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>

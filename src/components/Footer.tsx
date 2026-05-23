@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-white/10 text-center text-xs text-gray-400">
+        <div className="mt-10 pt-8 border-t border-white/10 text-center text-xs text-gray-300">
           &copy; {year} ProTechtive LLC. All rights reserved. | Olathe, Kansas
         </div>
       </div>
