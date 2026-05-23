@@ -29,8 +29,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-1">Email</div>
-                  <a href="mailto:info@protechtive.net" className="text-[#2D5F7A] font-medium hover:underline">
-                    info@protechtive.net
+                  <a href="mailto:sam.wheeler@protechtive.net" className="text-[#2D5F7A] font-medium hover:underline">
+                    sam.wheeler@protechtive.net
                   </a>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function ContactPage() {
             </ol>
             <div className="mt-8 pt-6 border-t border-white/20">
               <Link
-                href={`mailto:info@protechtive.net?subject=Security Consultation Request`}
+                href={`mailto:sam.wheeler@protechtive.net?subject=Security Consultation Request`}
                 className="w-full flex items-center justify-center gap-2 bg-[#F5C022] text-[#1E4057] font-bold px-6 py-3 rounded-lg hover:bg-[#FDD96A] transition-colors"
               >
                 Send an Email
