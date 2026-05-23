@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ProTechtive LLC — Website
 
-## Getting Started
+Marketing and blog site for [ProTechtive LLC](https://protechtive.net), a cybersecurity consulting firm.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Next.js (App Router, static export)
+- **Styling:** Tailwind CSS v4
+- **Blog:** MDX files in `src/content/blog/`
+- **Hosting:** Cloudflare Pages
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding a Blog Post
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a new `.mdx` file in `src/content/blog/`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```md
+---
+title: "Your Post Title"
+date: "YYYY-MM-DD"
+excerpt: "SEO meta description, 120–155 characters"
+tags: ["Tag1", "Tag2"]
+author: "Sam Wheeler"
+---
 
-## Learn More
+Post content here...
+```
 
-To learn more about Next.js, take a look at the following resources:
+The filename (without `.mdx`) becomes the URL slug.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pushes to `main` auto-deploy via GitHub Actions → Cloudflare Pages.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build   # outputs to out/
+```
