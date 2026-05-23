@@ -102,22 +102,22 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-24 bg-white">
+      <section id="services" className="py-24 bg-white dark:bg-[#162435]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-[#1E4057] mb-4">What We Do</h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#1E4057] dark:text-gray-100 mb-4">What We Do</h2>
+            <p className="text-lg text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
               Practical security services built around your risk tolerance, compliance needs, and budget.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((s) => (
-              <div key={s.title} className="group p-8 rounded-2xl border border-gray-100 hover:border-[#F5C022] hover:shadow-lg transition-all">
-                <div className="w-14 h-14 rounded-xl bg-[#2D5F7A]/10 text-[#2D5F7A] flex items-center justify-center mb-5 group-hover:bg-[#F5C022] group-hover:text-[#1E4057] transition-colors">
+              <div key={s.title} className="group p-8 rounded-2xl border border-gray-100 dark:border-white/10 dark:bg-[#0d1b2a]/50 hover:border-[#F5C022] hover:shadow-lg transition-all">
+                <div className="w-14 h-14 rounded-xl bg-[#2D5F7A]/10 dark:bg-[#2D5F7A]/30 text-[#2D5F7A] flex items-center justify-center mb-5 group-hover:bg-[#F5C022] group-hover:text-[#1E4057] transition-colors">
                   {s.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#1E4057] mb-3">{s.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{s.description}</p>
+                <h3 className="text-xl font-bold text-[#1E4057] dark:text-gray-100 mb-3">{s.title}</h3>
+                <p className="text-gray-500 dark:text-gray-400 leading-relaxed">{s.description}</p>
               </div>
             ))}
           </div>
@@ -133,15 +133,15 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section id="about" className="py-24 bg-gray-50">
+      <section id="about" className="py-24 bg-gray-50 dark:bg-[#0d1b2a]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-[#1E4057] mb-6">Security expertise, without the enterprise price tag.</h2>
-              <p className="text-gray-500 leading-relaxed mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-[#1E4057] dark:text-gray-100 mb-6">Security expertise, without the enterprise price tag.</h2>
+              <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-6">
                 ProTechtive LLC was founded to bridge the gap between enterprise-grade security and the organizations that need it most. We bring the depth of a seasoned security leader — NIST frameworks, Zero Trust, SOC 2, HIPAA — and apply it in a way that actually fits your team and your budget.
               </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
+              <p className="text-gray-500 dark:text-gray-400 leading-relaxed mb-8">
                 Based in Olathe, Kansas, we work with clients across industries including healthcare, technology, and financial services. Whether you need a fractional CISO to lead your program or a one-time assessment to understand your risk, we meet you where you are.
               </p>
               <ul className="space-y-3">
@@ -151,7 +151,7 @@ export default function Home() {
                   "SOC 2 Type I & II readiness",
                   "Practical, business-aligned security roadmaps",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-gray-600">
+                  <li key={item} className="flex items-start gap-3 text-sm text-gray-600 dark:text-gray-300">
                     <svg aria-hidden="true" className="w-5 h-5 text-[#F5C022] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>

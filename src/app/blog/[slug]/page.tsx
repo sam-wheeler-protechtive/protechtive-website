@@ -24,10 +24,10 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   if (!post) notFound();
 
   return (
-    <div className="py-24 bg-gray-50">
+    <div className="py-24 bg-gray-50 dark:bg-[#0d1b2a]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-4">
-          <Link href="/blog" className="text-sm text-[#2D5F7A] hover:underline inline-flex items-center gap-1">
+          <Link href="/blog" className="text-sm text-[#2D5F7A] dark:text-[#7BBCD6] hover:underline inline-flex items-center gap-1">
             <svg aria-hidden="true" className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16l-4-4m0 0l4-4m-4 4h18" />
             </svg>
@@ -37,14 +37,14 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         <div className="flex flex-wrap gap-2 mb-4">
           {post.tags.map((tag) => (
-            <span key={tag} className="text-xs font-semibold bg-[#2D5F7A]/10 text-[#2D5F7A] px-2.5 py-1 rounded-full">
+            <span key={tag} className="text-xs font-semibold bg-[#2D5F7A]/10 dark:bg-[#2D5F7A]/30 text-[#2D5F7A] dark:text-[#7BBCD6] px-2.5 py-1 rounded-full">
               {tag}
             </span>
           ))}
         </div>
 
-        <h1 className="text-4xl font-bold text-[#1E4057] mb-4 leading-tight">{post.title}</h1>
-        <div className="text-sm text-gray-400 mb-10">
+        <h1 className="text-4xl font-bold text-[#1E4057] dark:text-gray-100 mb-4 leading-tight">{post.title}</h1>
+        <div className="text-sm text-gray-400 dark:text-gray-500 mb-10">
           {post.author} &middot;{" "}
           {new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
         </div>
@@ -55,7 +55,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
           prose-strong:text-[#1E4057]
           prose-li:text-gray-600
           prose-p:text-gray-600 prose-p:leading-relaxed
-          prose-hr:border-gray-200">
+          prose-hr:border-gray-200
+          dark:prose-headings:text-gray-100
+          dark:prose-a:text-[#7BBCD6]
+          dark:prose-strong:text-gray-100
+          dark:prose-li:text-gray-300
+          dark:prose-p:text-gray-300
+          dark:prose-hr:border-white/10">
           <MDXRemote source={post.content} />
         </article>
 

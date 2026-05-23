@@ -8,27 +8,27 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="py-24 bg-gray-50">
+    <div className="py-24 bg-gray-50 dark:bg-[#0d1b2a]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-[#1E4057] mb-4">Get in Touch</h1>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto">
+          <h1 className="text-4xl font-bold text-[#1E4057] dark:text-gray-100 mb-4">Get in Touch</h1>
+          <p className="text-lg text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
             Ready to talk security? Reach out directly and we&rsquo;ll set up a free consultation to discuss your needs.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm">
-            <h2 className="text-xl font-bold text-[#1E4057] mb-6">Contact Information</h2>
+          <div className="bg-white dark:bg-[#162435] rounded-2xl border border-gray-100 dark:border-white/10 p-8 shadow-sm">
+            <h2 className="text-xl font-bold text-[#1E4057] dark:text-gray-100 mb-6">Contact Information</h2>
             <div className="space-y-5">
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[#2D5F7A]/10 text-[#2D5F7A] flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#2D5F7A]/10 dark:bg-[#2D5F7A]/30 text-[#2D5F7A] flex items-center justify-center flex-shrink-0">
                   <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs font-semibold uppercase tracking-widest text-gray-600 mb-1">Email</div>
+                  <div className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-1">Email</div>
                   <a href="mailto:sam.wheeler@protechtive.net" className="text-[#2D5F7A] font-medium hover:underline">
                     sam.wheeler@protechtive.net
                   </a>
@@ -36,26 +36,26 @@ export default function ContactPage() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[#2D5F7A]/10 text-[#2D5F7A] flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#2D5F7A]/10 dark:bg-[#2D5F7A]/30 text-[#2D5F7A] flex items-center justify-center flex-shrink-0">
                   <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs font-semibold uppercase tracking-widest text-gray-600 mb-1">Location</div>
-                  <div className="text-gray-600">Olathe, Kansas</div>
+                  <div className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-1">Location</div>
+                  <div className="text-gray-600 dark:text-gray-300">Olathe, Kansas</div>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-lg bg-[#2D5F7A]/10 text-[#2D5F7A] flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#2D5F7A]/10 dark:bg-[#2D5F7A]/30 text-[#2D5F7A] flex items-center justify-center flex-shrink-0">
                   <svg aria-hidden="true" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs font-semibold uppercase tracking-widest text-gray-600 mb-1">LinkedIn</div>
+                  <div className="text-xs font-semibold uppercase tracking-widest text-gray-600 dark:text-gray-400 mb-1">LinkedIn</div>
                   <a href="https://linkedin.com/company/protechtive" target="_blank" rel="noopener noreferrer" aria-label="linkedin.com/company/protechtive (opens in new tab)" className="text-[#2D5F7A] font-medium hover:underline">
                     linkedin.com/company/protechtive
                   </a>
