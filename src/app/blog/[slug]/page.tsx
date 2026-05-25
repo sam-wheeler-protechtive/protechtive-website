@@ -15,6 +15,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} — ProTechtive LLC`,
     description: post.excerpt,
+    alternates: { canonical: `https://protechtive.net/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      url: `https://protechtive.net/blog/${slug}`,
+      siteName: "ProTechtive LLC",
+      type: "article",
+      publishedTime: post.date,
+      authors: [post.author],
+      images: [{ url: "/logo.png", alt: post.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: ["/logo.png"],
+    },
   };
 }
 
@@ -23,8 +40,25 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const post = getPost(slug);
   if (!post) notFound();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: { "@type": "Person", name: post.author, url: "https://protechtive.net" },
+    publisher: {
+      "@type": "Organization",
+      name: "ProTechtive LLC",
+      url: "https://protechtive.net",
+      logo: { "@type": "ImageObject", url: "https://protechtive.net/logo.png" },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://protechtive.net/blog/${post.slug}` },
+  };
+
   return (
     <div className="py-24 bg-gray-50 dark:bg-[#0d1b2a]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-4">
           <Link href="/blog" className="text-sm text-[#2D5F7A] dark:text-[#7BBCD6] hover:underline inline-flex items-center gap-1">

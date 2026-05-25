@@ -5,6 +5,20 @@ import { getAllPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog — ProTechtive LLC",
   description: "Cybersecurity insights, compliance guides, and security leadership content from ProTechtive LLC.",
+  openGraph: {
+    title: "Blog — ProTechtive LLC",
+    description: "Cybersecurity insights, compliance guides, and security leadership content from ProTechtive LLC.",
+    url: "https://protechtive.net/blog",
+    siteName: "ProTechtive LLC",
+    images: [{ url: "/logo.png" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — ProTechtive LLC",
+    description: "Cybersecurity insights, compliance guides, and security leadership content from ProTechtive LLC.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function BlogPage() {

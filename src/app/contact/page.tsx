@@ -4,6 +4,18 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Contact — ProTechtive LLC",
   description: "Schedule a free consultation with ProTechtive LLC. We're ready to help with your cybersecurity needs.",
+  openGraph: {
+    title: "Contact — ProTechtive LLC",
+    description: "Schedule a free consultation with ProTechtive LLC.",
+    url: "https://protechtive.net/contact",
+    siteName: "ProTechtive LLC",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact — ProTechtive LLC",
+    description: "Schedule a free consultation with ProTechtive LLC.",
+  },
 };
 
 export default function ContactPage() {

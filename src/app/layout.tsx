@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "ProTechtive LLC provides vCISO, security assessments, compliance readiness (SOC 2, HIPAA, NIST), and Zero Trust architecture services for modern businesses.",
   metadataBase: new URL("https://protechtive.net"),
+  alternates: { canonical: "https://protechtive.net" },
   openGraph: {
     title: "ProTechtive LLC — Cybersecurity Consulting",
     description:
@@ -20,6 +21,12 @@ export const metadata: Metadata = {
     siteName: "ProTechtive LLC",
     images: [{ url: "/logo.png" }],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ProTechtive LLC — Cybersecurity Consulting",
+    description: "vCISO, security assessments, compliance, and Zero Trust architecture services.",
+    images: ["/logo.png"],
   },
 };
 

@@ -177,6 +177,29 @@ export default function Home() {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            name: "ProTechtive LLC",
+            url: "https://protechtive.net",
+            description: "vCISO, security assessments, compliance (SOC 2, HIPAA, NIST), and Zero Trust architecture services.",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Olathe",
+              addressRegion: "KS",
+              addressCountry: "US",
+            },
+            email: "sam.wheeler@protechtive.net",
+            founder: { "@type": "Person", name: "Sam Wheeler", jobTitle: "Founder & vCISO" },
+            serviceType: ["vCISO", "Security Assessments", "SOC 2 Compliance", "HIPAA Compliance", "Zero Trust Architecture"],
+            areaServed: "United States",
+          }),
+        }}
+      />
+
       {/* CTA Banner */}
       <section className="bg-[#F5C022] py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
