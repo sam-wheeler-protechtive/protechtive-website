@@ -1,0 +1,63 @@
+---
+title: "Email Security in Depth: SPF, DKIM, and DMARC Explained"
+date: "2024-03-28"
+excerpt: "Email authentication protocols are foundational to protecting your domain from spoofing — but they're widely misunderstood and often misconfigured."
+tags: ["Email Security", "DMARC", "SPF", "DKIM", "Phishing"]
+author: "Sam Wheeler"
+---
+
+When attackers want to phish your employees or your customers, one of their most effective techniques is sending email that appears to come from your domain. A message that appears to be from `it-security@yourcompany.com` requesting that employees update their password gets clicked.
+
+SPF, DKIM, and DMARC are the email authentication standards that prevent this. All three have been around for years. All three are still widely unconfigured or misconfigured.
+
+## SPF: Sender Policy Framework
+
+SPF allows domain owners to specify which mail servers are authorized to send email on behalf of their domain. It's implemented as a DNS TXT record that lists authorized sending IPs.
+
+When a receiving mail server gets a message claiming to be from `@yourcompany.com`, it checks your DNS for an SPF record and verifies that the sending server is on the authorized list. If it isn't, the message fails SPF.
+
+**Common SPF mistakes:**
+- Not having a record at all (most common)
+- An `+all` or `?all` qualifier that doesn't enforce anything
+- Too many DNS lookups (SPF has a 10-lookup limit — large organizations with many sending services frequently hit this)
+- Not listing all authorized sending services (third-party marketing tools, ticketing systems, etc.)
+
+A basic SPF record looks like: `v=spf1 include:_spf.google.com ip4:203.0.113.1 -all`
+
+The `-all` at the end is a hard fail — tell receiving servers to reject messages from unauthorized senders.
+
+## DKIM: DomainKeys Identified Mail
+
+DKIM adds a cryptographic signature to outgoing messages. The sending server signs each message with a private key, and the corresponding public key is published in DNS. Receiving servers verify the signature.
+
+This does two things: it proves the message came from a server with access to your private key, and it proves the message wasn't modified in transit (integrity).
+
+DKIM is especially important because, unlike SPF, it survives email forwarding. SPF fails when mail is forwarded because the forwarding server's IP isn't in your SPF record. DKIM signatures travel with the message.
+
+Setup requires generating a key pair, publishing the public key in DNS, and configuring your mail server (or email service) to sign outgoing messages. Most modern email platforms (Google Workspace, Microsoft 365) make this straightforward.
+
+## DMARC: Domain-Based Message Authentication, Reporting & Conformance
+
+DMARC is the policy layer that ties SPF and DKIM together and adds reporting.
+
+A DMARC record tells receiving mail servers what to do with messages that fail authentication: `none` (take no action, just report), `quarantine` (send to spam), or `reject` (reject the message outright).
+
+DMARC also specifies where reports should be sent — aggregate reports (one daily summary) and forensic reports (individual failure data). These reports are invaluable for understanding who is sending email claiming to be from your domain.
+
+**The DMARC maturity progression:**
+1. Start with `p=none` — collect reports without affecting mail delivery
+2. Review reports to identify all legitimate sending sources and ensure they're passing SPF/DKIM
+3. Move to `p=quarantine` once you're confident in your sending configuration
+4. Move to `p=reject` for full protection
+
+Starting with `p=reject` without the monitoring phase is how organizations break legitimate mail flows.
+
+## Why This Matters Beyond Your Own Email
+
+Google and Yahoo both announced requirements in 2024 that bulk senders must have DMARC configured (at minimum `p=none`). Microsoft has followed. These requirements aren't just about your email — they affect your ability to reach customers and partners.
+
+Additionally, a DMARC `p=reject` policy directly protects your customers and partners from being phished with email spoofing your domain. This is a meaningful trust signal that sophisticated customers notice.
+
+## Check Your Configuration
+
+Tools like MXToolbox, dmarcian, and Google Admin Toolbox let you check your current SPF, DKIM, and DMARC configuration instantly. If you don't have all three configured and DMARC at `p=quarantine` or `p=reject`, it's worth prioritizing.

@@ -1,0 +1,61 @@
+---
+title: "Security Architecture Review: When and Why to Get One"
+date: "2026-03-31"
+excerpt: "A security architecture review evaluates whether your security infrastructure is designed to address your actual risk profile. Here's what it involves and when it makes sense."
+tags: ["Security Architecture", "Assessment", "Risk Management", "Zero Trust"]
+author: "Sam Wheeler"
+---
+
+Organizations spend significant money on security tools. The question a security architecture review answers is whether those tools are deployed in a way that actually addresses your risks — or whether they're creating the appearance of security without the substance.
+
+A security architecture review is a structured evaluation of how your security controls are designed, integrated, and layered. It's distinct from a penetration test (which tests whether controls work against specific attacks) and a compliance audit (which verifies whether you meet a specific standard). It's broader: does your overall security design make sense given your threats, your environment, and your objectives?
+
+## When to Commission a Security Architecture Review
+
+**After significant infrastructure changes.** A major cloud migration, a significant acquisition, a fundamental change in how users work (mass remote work adoption, for example) changes your security architecture requirements. A review validates that the new architecture addresses the new environment.
+
+**When you've accumulated security debt.** Organizations that have added security tools reactively over years often have overlapping, conflicting, or gap-ridden architectures. A review identifies what's redundant, what's missing, and how to rationalize the toolset.
+
+**Before a significant security investment.** Before spending $500,000 on a new security platform, a review helps validate that the investment addresses a real gap rather than a gap in the marketing narrative.
+
+**When a security incident reveals architectural weakness.** Post-incident analysis that identifies an architectural failure (flat network allowed rapid lateral movement, backup system wasn't isolated and was encrypted) should be followed by an architectural review to understand the full scope of similar weaknesses.
+
+**As part of a Zero Trust transformation.** Moving from perimeter-based security to Zero Trust architecture is fundamentally an architectural change. A review provides a baseline assessment and a roadmap for the transformation.
+
+## What a Security Architecture Review Covers
+
+**Identity and access architecture.** How is identity managed? How are authentication decisions made? How is access controlled across on-premises, cloud, and SaaS environments? Are there gaps in MFA coverage, least privilege implementation, or privileged access management?
+
+**Network architecture.** How is the network segmented? What controls govern traffic between segments? Is the architecture designed to limit lateral movement? Does network design align with Zero Trust principles?
+
+**Cloud security architecture.** How are cloud environments configured and secured? Is the shared responsibility model properly understood and implemented? Are cloud workloads appropriately isolated and monitored?
+
+**Data security architecture.** Where does sensitive data live? How is it classified and protected? Is encryption applied appropriately? Are data flows through the environment mapped and controlled?
+
+**Detection and response architecture.** What visibility does the security team have? Are there gaps in logging and monitoring coverage? Is alert data centralized and actionable? Is the detection architecture designed to catch the attack patterns most relevant to your threat profile?
+
+**Endpoint security architecture.** How are endpoints managed and protected? Is EDR deployed universally? Is patch management effective? Are mobile devices managed appropriately?
+
+**Third-party integration architecture.** How do vendor systems integrate with your environment? Are integrations scoped appropriately, or do third-party integrations have excessive access?
+
+## What the Review Produces
+
+A well-executed security architecture review produces:
+
+- Current state documentation of the security architecture
+- Gap analysis against best practices and your specific risk profile
+- Prioritized findings with business impact context
+- Recommendations for architectural improvements
+- A roadmap for closing priority gaps
+
+The value is in the integrated view — not just "you have a gap in X" but "your identity architecture gap, your flat network, and your limited EDR coverage together create a specific high-impact attack path that you should prioritize closing."
+
+## Who Conducts It
+
+Security architecture reviews require reviewers who understand both technical security and enterprise architecture — not just penetration testers, and not just compliance assessors. The skill set is specific.
+
+Internal teams can conduct reviews, but they often lack the external perspective and the breadth of experience to identify patterns that are invisible from inside. External reviewers who have assessed many organizations across industries see things that internal teams normalize.
+
+## The ROI
+
+Architecture reviews are an investment in building security infrastructure that's actually coherent rather than accumulated. The cost of rationalizing an architecture proactively is significantly lower than discovering architectural failures through an incident.

@@ -1,0 +1,53 @@
+---
+title: "AI-Powered Attacks: What Security Teams Need to Know"
+date: "2025-10-28"
+excerpt: "Threat actors are deploying AI to automate and accelerate every phase of the attack lifecycle. Security teams need to understand the threat model to defend against it effectively."
+tags: ["AI Security", "Threat Intelligence", "Emerging Threats", "Defense"]
+author: "Sam Wheeler"
+---
+
+The security community has been discussing AI-powered attacks for years, with varying degrees of hype and accuracy. In 2025, the theoretical has become operational. Criminal organizations and nation-state actors are using AI across the attack lifecycle in ways that are measurably changing what defenders need to do.
+
+Here's what's real, what's still emerging, and what it means for how security programs need to evolve.
+
+## What's Real and Operational
+
+**AI-generated phishing and social engineering content.** This is the most mature use case. Generative AI produces convincing phishing emails, social media impersonation content, and pretexting scripts at scale and quality that previously required significant human effort. Language barriers are effectively eliminated — AI generates grammatically correct, contextually appropriate content in any language.
+
+**Voice and visual deepfakes for fraud.** As covered in a separate post, AI voice cloning and video deepfakes are being used operationally in BEC fraud. The technology is accessible to criminal organizations, not just nation-states.
+
+**Automated vulnerability discovery.** AI tools assist in analyzing targets for vulnerabilities — processing large codebases, configuration files, and infrastructure data faster than human analysts. This isn't replacing expert pentesters, but it's accelerating the reconnaissance and initial scanning phases.
+
+**AI-assisted malware.** AI is being used to generate and modify malware code to evade signature detection and obfuscate behavior. This isn't writing fully novel malware from scratch, but it's making signature-based detection less reliable.
+
+**Faster exploitation timelines.** The time from vulnerability disclosure to active exploitation has compressed. AI assistance in analyzing disclosed CVEs and developing proof-of-concept exploits contributes to this.
+
+## What's Emerging and Developing
+
+**Autonomous attack operations.** Research papers and proof-of-concept demonstrations show AI agents capable of performing multi-step intrusion sequences with limited human oversight. This is not yet routine in criminal operations, but it's an active area of development.
+
+**AI-powered lateral movement.** Using AI to analyze a compromised environment, identify high-value targets, and select movement paths is being researched. More sophisticated threat actors may be applying early versions of this capability.
+
+**Adaptive evasion.** AI systems that observe defensive responses and adapt attack behavior to evade detection are theoretically feasible and likely in development. The arms race between adaptive attacks and adaptive defenses is just beginning.
+
+## What This Means for Defenders
+
+**Controls that rely on pattern recognition are weaker.** Email filtering that looks for known-bad patterns, signature-based malware detection, and anomaly detection calibrated to "old normal" attack behavior are all degraded by AI-generated attacks that don't match historical patterns.
+
+**Identity and behavioral detection matter more.** What doesn't change is that attackers need to do things: authenticate, access files, move laterally, exfiltrate data. Identity-based detection (anomalous access patterns, impossible travel, unusual privilege usage) and behavioral analytics remain effective even when the specific attack tooling is novel.
+
+**Verification processes become more critical.** AI removes many of the tells that made social engineering detectable to trained humans. Out-of-band verification, callback procedures, and multi-party approval for sensitive actions are increasingly important as first-line defense.
+
+**Threat intelligence needs to be current.** AI-enhanced attack tooling changes faster than traditional malware. Threat intelligence programs need to be active, not just subscriptions to feeds that get reviewed quarterly.
+
+**AI on the defensive side.** Deploying AI-powered detection — behavioral EDR, UEBA (User and Entity Behavior Analytics), AI-assisted SOC triage — helps bridge the gap. Not a silver bullet, but a meaningful capability addition for detection and response.
+
+## The Strategic Posture
+
+Organizations that will navigate the AI threat landscape best are those with:
+- Strong identity security and continuous behavioral monitoring
+- Process-based fraud defenses that work regardless of social engineering quality
+- Detection capabilities that identify attacker behavior rather than attacker tools
+- Security teams that understand the current threat environment and adapt their programs accordingly
+
+The fundamental equation of security hasn't changed: attackers need to do things, defenders need to detect and stop them. AI accelerates both sides. The advantage goes to whoever has better fundamentals and adapts faster.

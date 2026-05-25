@@ -1,0 +1,53 @@
+---
+title: "Remote Work Security: Protecting Your Distributed Workforce"
+date: "2024-04-25"
+excerpt: "Remote work permanently expanded the enterprise attack surface. The organizations managing this well have made deliberate choices — here's what they look like."
+tags: ["Remote Work", "Zero Trust", "Endpoint Security", "Identity"]
+author: "Sam Wheeler"
+---
+
+Remote and hybrid work has moved from a pandemic accommodation to a permanent operational reality for most knowledge-work organizations. The security implications of this shift are lasting and require deliberate response — not temporary patches.
+
+## How Remote Work Changed the Attack Surface
+
+In the office-centric model, the network perimeter provided a meaningful security layer. Corporate laptops connected to corporate networks. Internet traffic went through the corporate proxy. Users and devices were in a controlled, monitored environment.
+
+Remote work dissolved this. Users connect from home networks, coffee shops, hotels, and airports — networks you don't control and can't monitor. Devices travel, get used for personal activity, and sometimes get shared with family. The gap between your managed environment and the internet is thinner.
+
+This isn't a temporary problem to solve until everyone comes back to the office. For most organizations, distributed work is the permanent state.
+
+## The Foundational Controls for Remote Work Security
+
+**Endpoint management — MDM and EDR.** Every device accessing corporate resources should be managed (enrolled in MDM/UEM) and protected (running EDR software). Managed devices can be monitored, patched remotely, and wiped if lost or stolen. EDR provides behavioral detection that catches threats that signature-based antivirus misses.
+
+Unmanaged personal devices accessing corporate systems are a significant risk. If BYOD is part of your model, at minimum require enrollment of personal devices and define what corporate access they're permitted.
+
+**Identity and MFA everywhere.** When users aren't on a corporate network, identity becomes the primary verification mechanism. Strong authentication — MFA with phishing-resistant methods for sensitive access — is non-negotiable.
+
+**Zero Trust Network Access (ZTNA) instead of VPN.** Traditional VPNs give remote users broad network access once connected. ZTNA grants access to specific applications based on identity and device posture — never to the full network. This significantly limits the blast radius of a compromised remote device.
+
+**DNS filtering.** Home networks don't have corporate web proxies. DNS filtering (Cisco Umbrella, Cloudflare Gateway, etc.) extends content filtering and malicious domain blocking to remote devices regardless of network.
+
+**Encrypted communications.** All work communications — email, messaging, file sharing, video calls — should use properly encrypted platforms. Verify that the tools your teams use by default meet this bar.
+
+## The Home Network Problem
+
+You can't control your employees' home networks, but you can reduce what they can do to you from them.
+
+Key considerations:
+
+- Ensure corporate applications don't trust the home network implicitly (ZTNA addresses this)
+- Educate employees on home router security basics (firmware updates, strong passwords, not using default credentials)
+- Consider providing hardware security for high-risk employees (network-attached security devices are niche but exist)
+
+## Visibility in Distributed Environments
+
+Security monitoring in a distributed environment is harder but not impossible. SIEM and EDR solutions built for distributed environments aggregate logs and alerts from endpoints regardless of network. Cloud-based monitoring tools work well regardless of user location.
+
+What you can't do: rely on network monitoring as your primary detection mechanism. In a perimeter-based world, watching network traffic caught a lot. In a distributed world, endpoint and identity telemetry become primary.
+
+## The Policy Side
+
+Technical controls need policy support. Remote work policies should address: acceptable personal use of corporate devices, requirements for securing the work environment (screen privacy in public places, locking screens when stepping away), and clear procedures for reporting lost or stolen devices.
+
+These policies only work if they're communicated, trained on, and enforced. A policy that's never discussed is a policy that's never followed.

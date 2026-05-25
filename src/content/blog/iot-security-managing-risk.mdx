@@ -1,0 +1,59 @@
+---
+title: "IoT Security: Managing Risk When Everything Is Connected"
+date: "2025-02-04"
+excerpt: "The proliferation of connected devices has dramatically expanded the enterprise attack surface. Most IoT devices are poorly secured by default — here's how to manage the risk."
+tags: ["IoT Security", "Network Security", "OT Security", "Attack Surface"]
+author: "Sam Wheeler"
+---
+
+The Internet of Things has delivered genuine value — operational efficiency, real-time monitoring, automation, and insights that weren't previously possible. It's also delivered a massive, poorly-secured expansion of the enterprise attack surface.
+
+The typical enterprise IoT device ships with default credentials, runs firmware that never gets updated, has limited security features, and was never designed to be part of a security-conscious environment. Managing this reality is a growing challenge for security teams.
+
+## The Scale of the Problem
+
+Consider what a typical mid-market organization might have on its network beyond laptops and smartphones: conference room equipment (TVs, video conferencing systems), HVAC controls and building management systems, physical access control systems, printers and multifunction devices, security cameras, WiFi access points, industrial sensors, possibly medical devices or manufacturing equipment.
+
+Most of this inventory is invisible to IT. It doesn't show up in Active Directory, doesn't have an agent installed, and doesn't appear in your vulnerability scanner results. But it's on the network, it's reachable, and it's running software with vulnerabilities that are never patched.
+
+## Why IoT Devices Are Particularly Risky
+
+**Default credentials.** Many IoT devices ship with well-known default username/password combinations (`admin`/`admin`, `admin`/`password`) that a significant percentage of deployments never change. These are trivially compromised.
+
+**No patch management.** IoT devices are often purchased and forgotten. Firmware updates may not exist, may not be automatic, or may require manual intervention that never happens.
+
+**Limited security features.** Devices designed for cost efficiency don't include security features as a priority. Encryption, authentication, and logging may be absent or minimal.
+
+**Insecure protocols.** Many IoT devices use outdated or plaintext protocols — Telnet, FTP, HTTP without TLS — that expose credentials and data in transit.
+
+**Long operational lifetimes.** An enterprise laptop is replaced every 3–5 years. A physical access control system or HVAC controller might run for 15–20 years. Security expectations from a device built in 2010 don't match 2025 threat reality.
+
+## The Network Access Problem
+
+The biggest security risk from IoT devices isn't the devices themselves being compromised — it's using that compromise to move laterally to more valuable systems.
+
+The Mirai botnet in 2016 demonstrated the attack potential of compromised IoT devices at internet scale. But in enterprise environments, the more immediate concern is that a compromised IP camera or smart HVAC controller becomes the entry point to your corporate network.
+
+Network segmentation is the primary control: IoT devices should be on dedicated, isolated network segments with no route to corporate systems. An attacker who compromises your conference room TV shouldn't be able to reach your file servers.
+
+## Practical IoT Security Controls
+
+**Discovery.** Start with knowing what's on your network. Passive network monitoring tools (from vendors like Ordr, Claroty, and Armis) discover IoT devices without requiring agents. Many enterprise network monitoring tools have similar capabilities.
+
+**Network segmentation.** Create dedicated VLANs for IoT device categories — one for building management, one for AV equipment, one for physical security systems, etc. Restrict communication to only what's required for operation.
+
+**Credential management.** Change default credentials on all devices during deployment. Document the credentials. If a device can't have its credentials changed, it shouldn't be on the network (or should be isolated with additional controls).
+
+**Firmware management.** Know the current firmware version on critical devices and check for updates regularly. Establish a process for applying firmware updates.
+
+**Procurement standards.** Build security requirements into IoT device procurement: required authentication features, encryption support, firmware update mechanism, and vendor support lifecycle.
+
+## The OT/ICS Dimension
+
+Operational Technology (OT) and Industrial Control Systems (ICS) are related but distinct — manufacturing equipment, SCADA systems, industrial sensors. The stakes for OT security are often higher (safety, operational continuity), the patch cycles are longer, and the expertise required is specialized.
+
+For organizations with OT environments, dedicated OT security programs — with appropriate segmentation from IT networks and specialized monitoring — are worth the investment.
+
+## Starting Point
+
+If you haven't started on IoT security, network discovery and segmentation are the highest-priority actions. Knowing what's on your network and isolating IoT from corporate systems prevents the most common attack scenario — IoT as a lateral movement entry point — without requiring device-level changes.

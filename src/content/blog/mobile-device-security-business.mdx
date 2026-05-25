@@ -1,0 +1,62 @@
+---
+title: "Mobile Device Security for Business: MDM and Beyond"
+date: "2024-10-22"
+excerpt: "Mobile devices are endpoints — and they access the same sensitive data as laptops. Here's how to secure them without creating a friction nightmare for your team."
+tags: ["Mobile Security", "MDM", "Endpoint Security", "BYOD"]
+author: "Sam Wheeler"
+---
+
+Mobile devices are fully capable enterprise endpoints. They access email, collaborate in Teams or Slack, connect to cloud applications, and store sensitive data. They also travel everywhere, get lost, get stolen, connect to untrusted networks, and run a variety of third-party apps.
+
+Despite this, mobile security often gets significantly less attention than laptop security in most organizations. That's a gap worth closing.
+
+## The Mobile Threat Landscape
+
+Mobile-specific threats are real and growing:
+
+**Credential theft through mobile phishing.** SMS and messaging app phishing (smishing) targets mobile users specifically. Mobile screens make it harder to identify spoofed URLs. Users on mobile are typically more distracted and making faster decisions.
+
+**Malicious applications.** Both app stores have had malware problems. Apps that request excessive permissions, apps that are typosquatted versions of legitimate software, and apps that behave legitimately until an update introduces malicious behavior all represent real risk.
+
+**Network-based attacks.** Connecting to untrusted Wi-Fi networks creates exposure. Man-in-the-middle attacks, network credential capture, and traffic interception are more feasible on untrusted networks.
+
+**Physical access.** Lost and stolen devices are common. Unencrypted devices or those without strong PINs/biometrics expose all data on the device and potentially network credentials and sessions.
+
+**OS vulnerabilities.** Mobile operating systems have vulnerabilities. Unpatched devices running old iOS or Android versions are exposed to known exploits.
+
+## Mobile Device Management (MDM)
+
+MDM (or the broader UEM — Unified Endpoint Management) is the foundational control for managing mobile devices at scale. MDM lets you:
+
+- Enforce security policies (minimum PIN length, biometric requirement, disk encryption)
+- Deploy configuration (VPN profiles, Wi-Fi settings, email configuration)
+- Remotely wipe devices if lost or stolen
+- Inventory enrolled devices and enforce compliance
+- Push and manage applications
+- Restrict capabilities (disable camera in secure environments, restrict personal app stores)
+
+For corporate-owned devices, full MDM enrollment is the standard. For BYOD (personal devices accessing corporate resources), MDM that respects the separation between personal and work data — typically using containerization — is the appropriate approach.
+
+Common MDM platforms: Microsoft Intune (strong value in Microsoft environments), Jamf (Apple-focused, popular in professional environments), VMware Workspace ONE, and others.
+
+## BYOD: The Policy Question
+
+BYOD introduces complexity that corporate-owned devices don't. The central tension: employees reasonably expect privacy on their personal devices; organizations reasonably need security controls on devices accessing corporate data.
+
+Containerization solutions address this by creating a managed workspace on the personal device while leaving personal data untouched. Corporate email, calendar, and applications live in the container; personal apps and data are outside it and completely inaccessible to the MDM.
+
+BYOD also requires a clear policy: what are employees consenting to when they enroll their personal device? What can IT see? Can IT wipe the device? Get legal review of your BYOD policy — it matters.
+
+## Beyond MDM
+
+**Conditional Access.** Integrate MDM with your identity provider so that only enrolled, compliant devices can access corporate resources. A personal phone without enrollment gets no corporate email access, period. This enforces adoption.
+
+**Mobile Threat Defense (MTD).** Tools like Lookout, Zimperium, and Jamf Threat Defense assess mobile devices for threats — OS vulnerabilities, malicious apps, network attacks — and can block risky devices from accessing corporate resources via conditional access integration.
+
+**App management.** Controlling which apps are available on corporate devices (application whitelisting) and which corporate apps are pushed (managed app deployment) addresses both security and productivity needs.
+
+## Getting Started
+
+Start with MDM enrollment for all corporate-owned devices and a clear BYOD policy that requires enrollment for personal devices accessing corporate data. Enforce basic policies: encryption, PIN, and remote wipe capability.
+
+Conditional access that blocks unenrolled devices from corporate resources enforces adoption more effectively than any policy alone.

@@ -1,0 +1,63 @@
+---
+title: "Application Security Testing: SAST, DAST, and SCA Explained"
+date: "2025-09-23"
+excerpt: "Application security testing has a confusing alphabet soup of acronyms. Here's a clear breakdown of the three main testing categories and how to build a practical AppSec program."
+tags: ["Application Security", "SAST", "DAST", "SCA", "DevSecOps"]
+author: "Sam Wheeler"
+---
+
+Application security testing is one of the areas where the security industry has done the most thorough job of creating a confusing acronym landscape. SAST, DAST, IAST, RASP, SCA — the terminology proliferates. But the underlying concepts are straightforward, and knowing which tool does what helps you build a program that covers your actual attack surface.
+
+## The Core Testing Categories
+
+**Static Application Security Testing (SAST)** analyzes source code, bytecode, or binary code for security vulnerabilities — without executing the code. It's "white box" testing: the tool has access to the code itself.
+
+What SAST finds: injection vulnerabilities (SQL injection, command injection), hardcoded secrets, use of known-vulnerable cryptographic algorithms, unsafe deserialization, and other code-level patterns that correspond to vulnerabilities.
+
+What SAST misses: vulnerabilities that only appear in a running application — authentication and authorization logic flaws, business logic issues, runtime configuration problems.
+
+SAST runs in the CI/CD pipeline, typically as part of the build process. Fast feedback to developers. Tools: Semgrep, SonarQube, Checkmarx, Veracode SAST, GitHub Advanced Security.
+
+**Dynamic Application Security Testing (DAST)** tests a running application from the outside — the way an attacker would. It's "black box" or "gray box" testing: the tool interacts with the application through its interface without necessarily having code access.
+
+What DAST finds: authentication weaknesses, injection points visible from the outside, misconfigured security headers, exposed sensitive data in responses, and the OWASP Top 10 categories that manifest in application behavior.
+
+What DAST misses: code-level vulnerabilities that don't manifest in detectable application behavior, deep business logic issues, and vulnerabilities that require insider knowledge to find.
+
+DAST runs against a staging or test environment (not production — it generates noise and can cause issues). Tools: OWASP ZAP (free, popular), Burp Suite Enterprise, Invicti, HCL AppScan.
+
+**Software Composition Analysis (SCA)** focuses specifically on the open-source dependencies your application uses — not your own code. It scans your dependency tree for known vulnerabilities in third-party components and license compliance issues.
+
+What SCA finds: known CVEs in your dependencies, transitive (indirect) dependency vulnerabilities, dependency versions that are out of date, and license obligations that may conflict with your usage.
+
+SCA runs at build time and continuously as new vulnerabilities are disclosed. Tools: Dependabot (GitHub), Snyk, FOSSA, Mend (formerly WhiteSource), Black Duck.
+
+## Why You Need All Three
+
+The categories are complementary. A program that runs only SAST misses runtime vulnerabilities. A program that runs only DAST misses code-level issues. A program that runs neither SAST nor DAST but does SCA is finding open-source vulnerabilities but missing everything in your own code.
+
+A mature AppSec program runs all three:
+
+- SCA: deployed in CI/CD, continuous monitoring for new vulnerability disclosures
+- SAST: deployed in CI/CD, runs on code changes
+- DAST: scheduled against staging environments, run on significant feature releases
+
+## IAST: A Note
+
+Interactive Application Security Testing (IAST) instruments the running application with agents that observe behavior during testing. It combines aspects of SAST (code-level visibility) and DAST (runtime context). Strong for finding vulnerabilities missed by both categories. Less common than SAST/DAST due to deployment complexity.
+
+## Building a Practical Program
+
+Start with SCA — it's the lowest friction, highest value starting point for most development teams. Immediately see your open-source vulnerability exposure without requiring code analysis.
+
+Add SAST next. Integrate it into your CI/CD pipeline with a policy that fails builds on new critical or high findings (not all existing findings — fix existing findings over time, but don't let the backlog grow).
+
+Add DAST as your maturity grows. It requires a staging environment and some operational complexity, but provides coverage that SAST and SCA can't.
+
+Supplement automated testing with manual penetration testing annually or for significant new features — automated tools miss logic flaws that human testers catch.
+
+## Triage and Prioritization
+
+All three tools generate findings, and not all findings are equal. Invest in triage: which findings are actually exploitable in your environment? Which have compensating controls? Which are false positives?
+
+Build a workflow that gets real vulnerabilities to developers with context, not just a list of findings. CVSS scores tell you severity; your business context tells you actual risk.

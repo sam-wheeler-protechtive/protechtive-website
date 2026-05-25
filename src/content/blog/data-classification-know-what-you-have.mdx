@@ -1,0 +1,67 @@
+---
+title: "Data Classification: Knowing What You Have Before You Can Protect It"
+date: "2025-04-03"
+excerpt: "You can't apply the right protections to your data without knowing what you have and how sensitive it is. Data classification is the prerequisite to data protection."
+tags: ["Data Classification", "Data Security", "DLP", "Risk Management", "Compliance"]
+author: "Sam Wheeler"
+---
+
+"Protect sensitive data" is advice that appears in virtually every security framework. It's also advice that's impossible to act on without knowing which data is sensitive, where it lives, and who has access to it.
+
+Data classification is the foundational step: systematically categorizing your data by sensitivity so you can apply appropriate controls.
+
+## Why Classification Matters
+
+Without classification, organizations tend toward one of two failure modes:
+
+**Treat all data the same.** Apply the same controls everywhere. This is expensive (you're over-protecting low-sensitivity data) and often leads to controls that are weak everywhere because the high-sensitivity data is diluted in the baseline.
+
+**Protect nothing consistently.** Without a defined classification scheme, "sensitive data" means different things to different teams. Finance thinks the most sensitive data is financial records; healthcare thinks it's patient data; legal thinks it's privileged communications. Without a shared framework, protections are ad hoc and inconsistent.
+
+Classification solves this by creating a shared vocabulary and a defined set of controls that go with each classification level.
+
+## Building a Classification Scheme
+
+Most organizations use three to four tiers. More tiers add precision but complexity; fewer tiers lose nuance. A common structure:
+
+**Public.** Information that can be freely shared — marketing materials, published product documentation, public website content. No special handling required.
+
+**Internal.** Information intended for internal use but not particularly sensitive — internal policies, general business communications, non-sensitive operational data. Standard employee access, not for external distribution.
+
+**Confidential.** Sensitive business information — contracts, financial reports, business strategies, product roadmaps, personnel records, customer lists. Access limited to those with a need to know; additional access controls required.
+
+**Restricted.** Highest sensitivity — PHI, PCI cardholder data, legally privileged communications, security credentials, trade secrets. Strictest access controls, encryption required, special handling procedures.
+
+## What Drives Classification
+
+Classification criteria should be consistent and documented so employees can classify data themselves without guessing:
+
+- **Regulatory requirement.** Data subject to HIPAA, PCI DSS, GDPR, or state privacy laws typically has a minimum classification level determined by the regulation.
+- **Business impact of disclosure.** What happens if this data is disclosed to an unauthorized party? The more severe the impact, the higher the classification.
+- **Contractual obligation.** Some data is classified at Confidential or above based on contractual requirements with customers or partners.
+
+## Making Classification Operational
+
+Classification is only valuable if it actually happens. Two paths:
+
+**Manual classification by data owners.** Data owners classify data when creating or storing it, using classification labels. Works for highly structured data (documents, files) with appropriate training and tooling support (Microsoft Purview, for example, provides labeling capability integrated into Office).
+
+**Automated classification.** DLP and data classification tools scan content and apply classification based on patterns — SSN patterns, credit card number patterns, clinical terminology, and others. More scalable but requires tuning and produces false positives.
+
+A hybrid approach — automated scanning for known sensitive data patterns, supplemented by manual classification for data that doesn't match patterns — works well for most organizations.
+
+## Classification Drives Downstream Controls
+
+Data classification isn't an end in itself. It drives:
+
+**Access controls.** Restricted data gets more restrictive access policies — smaller groups, additional authentication, access review more frequently.
+
+**Encryption requirements.** Restricted and Confidential data should be encrypted at rest and in transit. Public data doesn't require encryption.
+
+**DLP policies.** Data Loss Prevention tools use classification labels to determine what can be emailed externally, uploaded to cloud services, or printed.
+
+**Retention and disposal.** Different classifications may have different retention requirements (especially for regulated data) and different disposal requirements (secure disposal for Restricted data).
+
+**Audit and monitoring.** Access to high-classification data warrants more comprehensive logging and anomaly detection.
+
+Starting with classification unlocks the ability to apply all of these controls intelligently rather than uniformly.

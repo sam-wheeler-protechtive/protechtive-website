@@ -1,0 +1,69 @@
+---
+title: "Ransomware Recovery: What Happens After the Attack"
+date: "2024-08-08"
+excerpt: "Most ransomware preparation focuses on prevention. But prevention fails sometimes. Organizations that recover well have thought through recovery before they need it."
+tags: ["Ransomware", "Incident Response", "Business Continuity", "Recovery"]
+author: "Sam Wheeler"
+---
+
+The preparation conversation for ransomware almost always focuses on prevention: backups, EDR, MFA, segmentation. These controls matter and should absolutely be in place. But they're not foolproof. Ransomware groups are professional, persistent, and increasingly sophisticated. Prevention fails.
+
+What separates organizations that recover in days from those that recover in months — or don't recover at all — is almost entirely determined by preparation that happens before the attack.
+
+## The First Hours
+
+The first hours of a ransomware incident are chaotic. Encrypted files cascade across the network. Systems drop offline. Phones start ringing. People make decisions under enormous pressure.
+
+The organizations that navigate this best have defined their decision tree in advance:
+
+**Who is empowered to make containment decisions?** Pulling network connectivity, shutting down systems, and isolating segments are decisions that need to happen fast. Waiting for a committee to convene or executive approval costs hours of additional encryption.
+
+**What's the crisis communication chain?** Who gets called first? Leadership, legal, insurance, IR retainer? In what order?
+
+**What's the immediate containment priority?** Typically: isolate infected systems, protect backup infrastructure, protect privileged access systems.
+
+This should be documented and rehearsed before you need it.
+
+## The Backup Question
+
+Whether and how quickly you can recover without paying comes down to your backup architecture.
+
+The questions that determine this:
+
+**Are backups isolated from the network?** Ransomware specifically targets backups. If backup systems are reachable from the production network, they're likely encrypted too.
+
+**Are backups tested regularly?** A backup you've never restored from is a backup with unknown reliability. Test your restore capability on a schedule.
+
+**What's your actual RTO?** How long does it actually take to restore your critical systems from backup? Many organizations are surprised when they run this exercise to discover it's measured in days, not hours.
+
+**Do you have offline backups?** Immutable cloud backups (object storage with object lock) or air-gapped tapes are the gold standard for ransomware resilience. These can't be encrypted remotely.
+
+## The Ransom Payment Decision
+
+The question of whether to pay the ransom is business decision with significant dimensions:
+
+**Legal considerations.** The U.S. Treasury's OFAC has issued guidance that paying ransoms to sanctioned entities (certain Russian criminal groups, North Korean actors) creates legal exposure. Due diligence on who you're dealing with — typically through your IR firm — is necessary before payment.
+
+**Operational considerations.** Even with a decryptor, decrypting large environments is slow, unreliable, and doesn't address the underlying compromise. Payment is rarely a shortcut to fast recovery.
+
+**Insurance considerations.** Cyber insurance policies vary on ransomware payments — some cover them, some require insurer approval. Know your policy before you're making the decision.
+
+**Practical reality.** Sometimes the choice is pay or go out of business. That's a legitimate calculation. The decision should be made with eyes open to all dimensions, with legal counsel involved.
+
+## The Eradication Problem
+
+Recovery isn't just restoration. If you restore from backup without finding and removing the attacker's foothold, they'll encrypt you again.
+
+Thorough eradication requires understanding:
+- The initial access vector (so it's closed)
+- Persistence mechanisms the attacker established
+- What lateral movement occurred and what systems were accessed
+- Whether data was exfiltrated before encryption (which affects your notification obligations)
+
+This is forensic work. It requires capability that most organizations don't have internally — which is why IR retainers with firms that can provide forensic investigation are worth the annual cost.
+
+## After Recovery
+
+Post-incident, document what happened and why, what worked and what didn't, and what changes need to happen before next time. Ransomware groups often return to victims, sometimes immediately after recovery if the underlying vulnerability isn't addressed.
+
+The organization that comes out of a ransomware event with better controls, tested backups, and a practiced IR capability is in a stronger position than before. That outcome is available to organizations that treat recovery as a learning event rather than just a crisis to survive.

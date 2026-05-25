@@ -1,0 +1,55 @@
+---
+title: "API Security: The Hidden Attack Surface in Your Tech Stack"
+date: "2024-03-19"
+excerpt: "APIs are the connective tissue of modern software — and they've become one of the most targeted and least secured parts of the attack surface."
+tags: ["API Security", "Application Security", "Web Security", "OWASP"]
+author: "Sam Wheeler"
+---
+
+Modern software is built on APIs. Cloud services, SaaS integrations, mobile apps, partner data feeds, internal microservices — they all communicate through APIs. This makes APIs extraordinarily common. It also makes them an extraordinarily large attack surface.
+
+Gartner predicted that API attacks would become the most frequent application attack vector by 2022. The data has confirmed this. High-profile breaches at companies including Twitter, Experian, T-Mobile, and dozens of others involved API vulnerabilities that exposed user data at scale.
+
+## Why APIs Are Particularly Vulnerable
+
+**They're often not inventoried.** Organizations frequently don't know all the APIs they expose. APIs get built by development teams, created for specific integrations, and forgotten when the project moves on. An API you don't know about is one you can't secure.
+
+**They carry sensitive data.** APIs are built to retrieve and transmit data efficiently. When authentication or authorization is wrong, that data is exposed directly — no additional exploitation required.
+
+**Traditional web security controls don't fully apply.** WAFs designed for HTML web applications often miss API-specific attacks. API endpoints don't have the same request/response patterns, and generic protection misses the nuances.
+
+**Development speed outpaces security review.** APIs often get deployed quickly in CI/CD pipelines without the same security review that higher-visibility features get.
+
+## The OWASP API Security Top 10
+
+OWASP (the Open Web Application Security Project) maintains a dedicated API Security Top 10 — separate from the general web application Top 10 — because API security issues have their own specific patterns.
+
+The most commonly exploited categories:
+
+**Broken Object Level Authorization (BOLA):** APIs that return data based on an ID in the request without verifying the requestor is authorized to access that specific object. If `GET /api/users/12345` returns user data without verifying the caller is authorized to see user 12345, you have BOLA. This is consistently the most exploited API vulnerability category.
+
+**Broken Authentication:** Weak authentication mechanisms, tokens that don't expire, missing authentication on sensitive endpoints.
+
+**Excessive Data Exposure:** APIs that return more data than the consuming application needs, trusting the client to filter. If the API returns a full user object but the app only displays three fields, the other fields are still exposed.
+
+**Broken Function Level Authorization:** Endpoints that perform privileged actions (admin functions, bulk operations) that don't verify the caller has appropriate authorization.
+
+**Mass Assignment:** APIs that accept and apply user-supplied JSON to data objects without filtering which fields can be modified — allowing attackers to set fields (like `admin: true`) they shouldn't be able to touch.
+
+## What Good API Security Looks Like
+
+**Inventory your APIs.** You can't secure what you don't know exists. Use API gateways and discovery tools to build a complete inventory.
+
+**Authenticate and authorize every request.** Every API endpoint should require authentication, and every request should verify the caller is authorized to perform the specific action on the specific resource.
+
+**Return only what's needed.** Design API responses to return the minimum data required. Don't expose internal IDs, audit fields, or data the consuming application doesn't need.
+
+**Rate limiting and throttling.** APIs without rate limits are vulnerable to brute force, enumeration, and scraping attacks.
+
+**API-specific security testing.** Include API security testing in your SDLC — both automated DAST scanning and manual review for logic flaws. BOLA and business logic issues require human review to find reliably.
+
+**Monitor API traffic.** API security tools can detect anomalous patterns — unusually large data retrievals, access pattern changes, enumeration attempts — that indicate active exploitation.
+
+## Starting Point
+
+If you're not sure where your API security stands, start with an inventory exercise and a basic authentication/authorization review of your most data-sensitive APIs. Fixing BOLA and Broken Authentication on your highest-risk APIs delivers immediate, measurable risk reduction.

@@ -1,0 +1,61 @@
+---
+title: "Third-Party Risk Assessments: A Practical Approach"
+date: "2024-09-05"
+excerpt: "Assessing vendor security is a compliance requirement for most frameworks and a genuine business risk. Here's how to run assessments that provide real security value."
+tags: ["Vendor Risk", "Third-Party Risk", "Risk Assessments", "Compliance"]
+author: "Sam Wheeler"
+---
+
+Third-party risk assessments sit at an awkward intersection: they're required by compliance frameworks, expected by customers, and genuinely important for security — but they're often done in a way that produces paperwork rather than insight.
+
+Here's how to do them in a way that actually matters.
+
+## The Assessment Spectrum
+
+Not all vendor assessments need to be the same depth. A risk-tiered approach directs your effort toward where the actual risk is.
+
+**Lightweight review (Tier 3 vendors):** Contract review, basic security attestation, checking whether they have cyber insurance. This applies to vendors with no data access or system connectivity.
+
+**Questionnaire-based review (Tier 2 vendors):** A security questionnaire (SIG Lite or equivalent), review of any available compliance certifications, and a follow-up conversation on significant gaps. Applies to vendors with limited data access.
+
+**Full assessment (Tier 1 vendors):** Full security questionnaire, SOC 2 report review (or equivalent), independent scanning of their external attack surface, detailed review of security policies and evidence, and potentially a virtual or on-site assessment visit. Applies to vendors with significant data access, critical system connectivity, or the ability to materially affect your operations.
+
+## Reading SOC 2 Reports
+
+SOC 2 Type II reports are the most common independent security certification you'll receive from vendors. Knowing how to read them is essential.
+
+Key things to review:
+
+**The opinion.** Is it qualified (exceptions noted) or unqualified? An unqualified opinion is better. A qualified opinion tells you something went wrong — read the exceptions to understand what.
+
+**The scope.** What systems and services are covered? If a vendor's SOC 2 covers Platform A but your contract is for Platform B, the report may not be relevant.
+
+**The control descriptions.** Does the vendor actually do what you care about — access controls, encryption, patch management, incident response? Read the descriptions, not just the opinion.
+
+**Exceptions in Section 4.** Every exception is a finding where the control didn't operate as described during the audit period. Review exceptions carefully. Minor exceptions (one missed access review) are different from systemic exceptions (access reviews never conducted).
+
+**The period covered.** A SOC 2 report covering last year isn't evidence of current controls. Ask for current-period reports and bridge letters for recent periods.
+
+## The Questionnaire Problem
+
+Standard security questionnaires (SIG, CAIQ, custom) are useful but have limitations. Vendors answer them, often optimistically, and responses are rarely verified. Answers to "do you have MFA on all systems?" should be validated against evidence, not taken at face value.
+
+Improve questionnaire effectiveness:
+
+- Ask for evidence for critical controls (screenshots, policy documents, audit results)
+- Follow up on yes/no answers with "how" questions
+- Note discrepancies between questionnaire responses and what their SOC 2 actually says
+
+## Continuous Monitoring
+
+Annual assessments catch annual problems. Continuous monitoring — watching for news of vendor breaches, checking your vendor's external attack surface, monitoring their security ratings — helps you respond faster when things change between assessments.
+
+External security ratings platforms (BitSight, SecurityScorecard) continuously assess vendor security posture from the outside. For critical vendors, this is a useful complement to periodic assessments.
+
+## When to Walk Away
+
+Occasionally, a vendor assessment reveals that a critical vendor has security practices that create unacceptable risk. What then?
+
+Options: require remediation as a condition of the relationship (with a timeline and verification), implement compensating controls on your side (reducing reliance on the vendor's security), or exit the relationship.
+
+Most organizations are reluctant to exit vendor relationships over security concerns, especially when the vendor is deeply integrated. But the risk of staying in an insecure vendor relationship often exceeds the cost of transition. Make that calculation explicitly rather than accepting risk by default.

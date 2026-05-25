@@ -1,0 +1,56 @@
+---
+title: "Identity and Access Management: The Foundation of Zero Trust"
+date: "2024-01-09"
+excerpt: "If Zero Trust is the architecture, identity is the cornerstone. Strong IAM is where every Zero Trust journey should begin."
+tags: ["Identity", "IAM", "Zero Trust", "Access Control"]
+author: "Sam Wheeler"
+---
+
+Every conversation about Zero Trust eventually comes back to identity. In a perimeter-less world — where users work from anywhere, applications live in the cloud, and the concept of "inside the network" is increasingly meaningless — identity is what security decisions get made against.
+
+Understanding what good Identity and Access Management (IAM) looks like is foundational to any Zero Trust program.
+
+## What IAM Actually Encompasses
+
+IAM is often reduced to "user accounts and passwords," but it's considerably broader. A mature IAM program covers:
+
+**Authentication** — How do we verify you are who you claim to be? This includes password policies, MFA, and increasingly, phishing-resistant authentication like FIDO2/passkeys.
+
+**Authorization** — What are you allowed to do once we've verified your identity? This is access control — roles, permissions, entitlements — and it's where most organizations have significant gaps.
+
+**Identity governance** — Who has access to what, and is that access still appropriate? Provisioning new users, deprovisioning terminated employees, periodic access reviews, and privileged account oversight fall here.
+
+**Privileged access management (PAM)** — Special controls for accounts with elevated privileges: administrators, service accounts, shared accounts. These are the keys to the kingdom and require additional protections.
+
+## Where Organizations Fall Down
+
+**Access that accumulates over time.** Employees change roles, join new projects, and acquire access permissions throughout their tenure. Most organizations don't have a process to regularly review and prune access. The result is users with far more access than their current role requires — a concept called "permission creep."
+
+**Terminated employees still in the system.** This sounds like an obvious failure, but it's extraordinarily common. Audit any mature organization's user directory and you'll often find accounts for people who left months ago. These are active attack surface.
+
+**No visibility into service accounts.** Machine identities — service accounts, API keys, automation credentials — often have excessive permissions, no MFA, and no rotation schedule. They're invisible in most access reviews because nobody owns them clearly.
+
+**Privileged accounts used for daily work.** Administrators who use their admin accounts for day-to-day email and web browsing create unnecessary risk. Admin should mean admin — elevated access used only when needed, with additional authentication requirements.
+
+## The Access Review Problem
+
+Periodic access reviews are required by most compliance frameworks and are genuinely important for security. They're also deeply tedious, and they fail when they become a checkbox that managers rubber-stamp without actually reviewing.
+
+Making access reviews effective:
+
+- Scope them appropriately (high-risk systems get reviewed quarterly, everything else annually)
+- Provide reviewers with meaningful context, not just lists of names and roles
+- Automate revocation when managers indicate access is no longer needed
+- Track completion and escalate when reviews are overdue
+
+## Getting to Least Privilege
+
+Least privilege — the principle that users should have only the access required for their job function — is foundational to Zero Trust. It's also genuinely hard to achieve because it requires understanding what each role needs and building granular permission structures.
+
+Practical approach: start with the highest-risk systems and the most sensitive data. Define role-based access properly for those, and enforce it. Expand from there.
+
+## Technology Isn't the Whole Answer
+
+IAM is as much a process problem as a technology problem. The best identity infrastructure in the world fails when access review processes are ignored, when HR doesn't notify IT about terminations, or when users share accounts for convenience.
+
+IAM success requires coordination between IT, HR, legal, and business owners — and governance that ensures the processes actually happen.

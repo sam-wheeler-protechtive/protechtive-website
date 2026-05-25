@@ -1,0 +1,59 @@
+---
+title: "Network Segmentation: A Core Component of Zero Trust"
+date: "2024-07-18"
+excerpt: "Flat networks let attackers move freely once they're inside. Network segmentation limits the blast radius of any single compromise — and it's foundational to Zero Trust."
+tags: ["Network Security", "Zero Trust", "Segmentation", "Architecture"]
+author: "Sam Wheeler"
+---
+
+One of the most consistent findings in post-breach analysis is that attackers had far more access than they should have. They got in through one vector — a phishing email, an unpatched vulnerability, a compromised credential — and then moved freely across the environment to reach the systems they actually wanted.
+
+This lateral movement is often easier than the initial compromise. And the primary architectural control that limits it is network segmentation.
+
+## What Network Segmentation Is
+
+Network segmentation divides a flat network into smaller zones with controlled communication between them. Devices in one segment can only communicate with devices in other segments according to defined, enforced rules.
+
+The contrast: a flat network lets any device talk to any other device by default. A segmented network requires explicit permission for cross-segment communication.
+
+## Why Segmentation Matters in Practice
+
+Consider a ransomware attack as a concrete example. If an attacker compromises an endpoint through a phishing email and your network is flat, they can scan the entire network from that endpoint, find every accessible share and database, and encrypt it all. One compromised endpoint becomes a full environment compromise.
+
+If your network is segmented, the compromised endpoint can only reach the segments it's allowed to communicate with. Finance systems, production databases, backup infrastructure, and domain controllers are in separate segments with restricted access. The blast radius of the initial compromise is contained.
+
+## Segmentation Approaches
+
+**Traditional VLANs.** Layer 2 network segmentation using VLANs at the switching layer, with routing and firewall rules controlling inter-VLAN communication. This is the foundation of segmentation in most on-premises environments.
+
+**Microsegmentation.** More granular segmentation at the workload or even individual host level. Rather than putting all web servers in one VLAN and all database servers in another, microsegmentation can restrict communication to specific source-destination-port combinations. Software-defined networking platforms and host-based firewalls enable this. It's more complex but provides significantly more granular control.
+
+**Cloud-native segmentation.** In cloud environments, security groups (AWS), Network Security Groups (Azure), and VPC firewall rules provide segmentation. Cloud-native applications should be designed with appropriate segmentation from the start — not patched in afterward.
+
+## What Should Be Segmented
+
+Segmentation strategy should be risk-based. The highest-priority segments to isolate:
+
+**Crown jewel systems.** Databases containing sensitive customer data, financial systems, intellectual property repositories. These should be the most restrictive segments with the fewest authorized communication paths.
+
+**Privileged management infrastructure.** Domain controllers, jump servers, management consoles. Attackers prioritize these because control of privileged infrastructure means control of everything.
+
+**OT/ICS systems.** Operational technology — manufacturing systems, building management, SCADA — must be isolated from IT networks. These systems often run legacy software that can't be patched and weren't designed with network security in mind.
+
+**Guest networks.** Guest wireless should be completely isolated from corporate infrastructure. No path from guest network to corporate systems.
+
+**Backup infrastructure.** Backup systems should not be reachable from general production networks. Ransomware that can reach backups renders them useless.
+
+## Segmentation as Part of Zero Trust
+
+Traditional segmentation is perimeter-based: once inside a segment, traffic is largely trusted. Microsegmentation and Zero Trust architecture push this further — every connection request is verified, regardless of which segment it originates from.
+
+The progression: start with basic VLAN segmentation and firewall rules to isolate critical systems. Mature toward microsegmentation as your environment and capabilities develop. Layer identity-based access controls on top for a full Zero Trust posture.
+
+## Common Pitfalls
+
+**Segmentation that exists on paper but isn't enforced.** Firewall rules that haven't been audited in years often have exceptions that defeat the segmentation intent. Regular firewall rule reviews are necessary.
+
+**Flat internal networks after initial "segmentation."** Many organizations create segments at the perimeter but leave the internal network flat. An attacker who gets past the perimeter has unrestricted internal movement.
+
+Segment defensively, verify regularly, and treat lateral movement limitation as a first-tier security objective.

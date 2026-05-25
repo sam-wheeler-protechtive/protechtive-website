@@ -1,0 +1,60 @@
+---
+title: "Securing the Software Supply Chain: Lessons After SolarWinds and MOVEit"
+date: "2025-07-17"
+excerpt: "Supply chain attacks have demonstrated that an attacker doesn't need to breach you directly — they can compromise a vendor you trust. Here's what a supply chain security program looks like in practice."
+tags: ["Supply Chain Security", "Software Security", "SBOM", "DevSecOps", "Vendor Risk"]
+author: "Sam Wheeler"
+---
+
+The SolarWinds attack in 2020 fundamentally changed how the security industry thinks about software supply chains. Instead of attacking 18,000 organizations directly, attackers compromised one software build process, and a trusted software update delivered the malware. The Log4Shell vulnerability in 2021 demonstrated how a single component buried in thousands of products could create exposure at scale. The MOVEit breach in 2023 added managed file transfer software to the list.
+
+Software supply chain security isn't a niche concern. It's a mainstream risk management challenge.
+
+## What the Supply Chain Attack Surface Looks Like
+
+Modern software is built on layers of dependencies, tools, and processes:
+
+**Third-party code.** The typical production application includes hundreds of open-source libraries. Many of those libraries have their own dependencies. The dependency tree is deep and often poorly understood by development teams.
+
+**Development tools and CI/CD infrastructure.** Build servers, code repositories, CI/CD pipelines, artifact registries — if these are compromised, they can inject malicious code into otherwise legitimate software.
+
+**Commercial and open-source components.** Proprietary third-party SDKs, commercial off-the-shelf software, and services consumed via API are all part of the supply chain.
+
+**The update mechanism.** Attackers who can poison the update distribution system — as with SolarWinds — can deliver malware to every customer. Signed updates with verified provenance address this.
+
+## Key Supply Chain Security Practices
+
+**Software Composition Analysis (SCA).** Automatically scanning dependencies for known vulnerabilities is table stakes. Tools like Dependabot, Snyk, FOSSA, and Mend continuously monitor the dependency tree and alert when vulnerable components are in use.
+
+Beyond SCA for vulnerabilities, SCA for license compliance matters too — open-source licenses have usage requirements that unreviewed adoption can violate.
+
+**Software Bill of Materials (SBOM).** An SBOM is a structured inventory of all components in a software product — analogous to an ingredient list. Executive Order 14028 (2021) required SBOM generation for software sold to the federal government. The practice is increasingly expected broadly.
+
+SBOMs enable: rapid identification of exposure when a component vulnerability is disclosed (which of our products contain this component?), better vendor questionnaires (what third-party components are in your product?), and improved license compliance tracking.
+
+Common SBOM formats: SPDX (Linux Foundation) and CycloneDX (OWASP) are the primary standards.
+
+**Build environment security.** CI/CD pipelines are high-value targets. Securing the build environment means: separate build infrastructure from production, enforce least privilege for build service accounts, sign build outputs cryptographically, monitor build processes for anomalous behavior.
+
+**Artifact verification.** Before consuming a dependency or deploying a build artifact, verify its integrity. Cryptographic signatures on packages and artifacts, and verification before use, prevent tampered package distribution attacks.
+
+**Dependency pinning.** Rather than accepting any version of a dependency that meets a version range, pin to specific versions. This prevents dependency confusion attacks and unexpected changes when a new version is published.
+
+**Secrets management in the pipeline.** Build and deployment pipelines frequently need credentials. These should come from secrets management systems, not from environment variables in build configuration files or from code repositories.
+
+## Organizational Considerations
+
+Software supply chain security spans development, security, and procurement. Development teams own the code and build processes; security teams own policy and oversight; procurement handles vendor contracts with relevant supply chain security requirements.
+
+Coordination is required. Security teams that don't understand the SDLC can't contribute to supply chain security effectively. Development teams that don't understand the threat model make choices that create unnecessary exposure.
+
+## Where to Start
+
+If you're beginning a supply chain security program:
+
+1. Inventory your software dependencies (SCA) — know what you have and what vulnerabilities exist
+2. Generate SBOMs for your most critical products and services
+3. Implement automated dependency vulnerability scanning in your CI/CD pipeline
+4. Secure your build infrastructure — especially service account permissions and secret management
+
+The field is evolving quickly. NIST, CISA, and the OpenSSF (Open Source Security Foundation) all publish practical guidance that's worth following.

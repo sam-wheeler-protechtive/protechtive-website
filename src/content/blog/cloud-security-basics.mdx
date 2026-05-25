@@ -1,0 +1,53 @@
+---
+title: "Cloud Security Basics Every Business Should Know"
+date: "2023-05-29"
+excerpt: "Moving to the cloud doesn't automatically make you more secure — but done right, it can. Here's what businesses need to understand about securing cloud environments."
+tags: ["Cloud Security", "AWS", "Azure", "GCP", "Shared Responsibility"]
+author: "Sam Wheeler"
+---
+
+Every week I talk to organizations that have migrated workloads to the cloud under the assumption that AWS, Azure, or Google Cloud handles security for them. They don't — not fully. And misunderstanding this is one of the most common causes of cloud security incidents.
+
+## The Shared Responsibility Model
+
+Cloud providers are very clear about this, even if the message doesn't always get through: security is a shared responsibility.
+
+The cloud provider secures the infrastructure — the physical data centers, the hypervisors, the networking fabric, the global infrastructure. This is genuinely excellent security that most organizations couldn't replicate on their own.
+
+What you're responsible for depends on the service model, but it generally includes: your data, your identities, your access configurations, your applications, your network controls within the cloud, and your operating systems if you're running VMs.
+
+The misconfiguration problem — an S3 bucket left publicly readable, an Azure blob storage account with anonymous access, a GCP firewall rule that exposes a database to the internet — is entirely your responsibility. Cloud providers don't prevent you from making those mistakes. You have to catch them yourself.
+
+## The Most Common Cloud Security Mistakes
+
+**Overprivileged identities.** IAM roles and policies in cloud environments frequently get provisioned with more permissions than necessary because it's easier and faster to give something admin rights than to figure out the minimal permissions required. This creates massive blast radius when credentials are compromised.
+
+**Publicly exposed resources.** Storage buckets, databases, and compute instances that are inadvertently exposed to the internet. Many high-profile cloud breaches have been simple misconfiguration issues.
+
+**No logging or monitoring.** Cloud environments generate rich telemetry — but that data is only useful if you're collecting and reviewing it. CloudTrail, Azure Monitor, and GCP Cloud Logging need to be enabled and monitored.
+
+**No MFA on cloud management console access.** If someone compromises your AWS root account credentials and there's no MFA, they own your entire cloud environment.
+
+**Unencrypted data.** Cloud providers offer encryption capabilities — use them. Encryption at rest and in transit should be default, not optional.
+
+## What Good Cloud Security Looks Like
+
+The baseline for a well-secured cloud environment:
+
+- All administrative access protected by MFA
+- IAM roles following least-privilege principle, with regular access reviews
+- CloudTrail / activity logging enabled in all regions
+- Automated compliance checks using tools like AWS Config, Azure Policy, or GCP Security Command Center
+- No publicly exposed resources without explicit business justification
+- All sensitive data encrypted at rest and in transit
+- Regular backup and recovery testing
+
+## Cloud Security Posture Management
+
+Once you're past the basics, Cloud Security Posture Management (CSPM) tools continuously assess your cloud configurations against security best practices and compliance frameworks. AWS Security Hub, Azure Defender, and third-party tools like Prisma Cloud or Wiz do this well.
+
+These tools identify misconfigurations before attackers do. For organizations with significant cloud footprint, they're worth the investment.
+
+## Moving Forward
+
+If you're not sure where your cloud environment stands, start with a basic configuration review. Check IAM permissions, review publicly accessible resources, confirm logging is enabled, and verify MFA is enforced. An hour of review can surface significant issues — and fix them before they become incidents.

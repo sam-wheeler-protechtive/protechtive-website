@@ -1,0 +1,59 @@
+---
+title: "Zero Trust in Practice: A Realistic Implementation Roadmap"
+date: "2024-10-31"
+excerpt: "Zero Trust is an architectural goal, not a product you buy. Here's a realistic roadmap for organizations working toward Zero Trust maturity."
+tags: ["Zero Trust", "Architecture", "Implementation", "Security Strategy"]
+author: "Sam Wheeler"
+---
+
+Zero Trust gets discussed at a level of abstraction that makes implementation feel nebulous. "Never trust, always verify" is a principle, not an implementation plan. What does actually moving toward Zero Trust look like in practice, over a realistic timeline, for an organization that isn't starting from zero?
+
+Here's a practical roadmap.
+
+## Phase 1: Foundation (Months 1–6)
+
+The foundation of Zero Trust is knowing what you have and having strong identity controls. Both are prerequisites for everything that follows.
+
+**Identity inventory and cleanup.** Audit every identity in your environment: user accounts, service accounts, privileged accounts, shared accounts. Remove or disable anything that shouldn't exist. Ensure every account has a clear owner. This is unglamorous work that pays dividends throughout the Zero Trust journey.
+
+**MFA everywhere.** Universal MFA is the single most impactful identity control. Prioritize phishing-resistant MFA (FIDO2/passkeys) for privileged and high-risk accounts. TOTP authenticator apps for everything else. No exceptions for legacy applications without a documented plan to address them.
+
+**Asset inventory.** You can't implement Zero Trust without knowing what you're protecting. Build or refresh your asset inventory — hardware, software, cloud resources, data stores.
+
+**Conditional access basics.** Implement conditional access policies that require MFA, compliant devices, and risk-based evaluation before granting access to sensitive applications. This is available in most major identity platforms (Entra ID, Okta, Ping).
+
+## Phase 2: Least Privilege and Visibility (Months 6–18)
+
+With identity controls in place, focus on reducing excessive access and improving visibility.
+
+**Access right-sizing.** Conduct access reviews for your highest-risk systems and clean up permission creep. Implement role-based access control where it doesn't exist. Begin moving toward just-in-time privileged access for administrative functions.
+
+**Network segmentation.** Segment your highest-value assets — financial systems, sensitive databases, production infrastructure — from general corporate networks. Implement and validate firewall rules between segments.
+
+**Logging and monitoring.** Centralize logs from identity, endpoints, network, and cloud. This is where your SIEM investment goes. Establish baseline alert coverage for high-priority attack scenarios: impossible travel, mass access, unusual admin activity.
+
+**Endpoint management.** Enroll all corporate endpoints in MDM/UEM. Enforce encryption, patching, and compliance policies. Deploy EDR on all endpoints.
+
+## Phase 3: Application-Level Controls (Months 12–24)
+
+**Zero Trust Network Access (ZTNA).** Replace VPN for remote access with ZTNA — granting access to specific applications based on identity and device posture, never network-level access. This limits lateral movement from compromised remote endpoints significantly.
+
+**Application inventory and risk ranking.** Map your application portfolio: which apps are internet-facing, which carry sensitive data, which have weak authentication? Build a remediation roadmap.
+
+**Microsegmentation.** Move beyond VLAN-based segmentation toward workload-level controls. This is more complex and typically requires new tooling, but it significantly constrains lateral movement within already-compromised environments.
+
+## Phase 4: Data-Centric Controls (Ongoing)
+
+**Data classification.** Implement a data classification scheme and tag sensitive data consistently. This enables data-aware access controls.
+
+**DLP controls.** Data Loss Prevention tools monitor and control movement of sensitive data — blocking uploads to unapproved cloud services, alerting on unusual data access patterns, preventing email exfiltration.
+
+**Encryption.** All sensitive data encrypted at rest and in transit, with key management that doesn't undermine the encryption.
+
+## Realistic Expectations
+
+A mature Zero Trust architecture is a multi-year journey. Organizations that claim to have fully implemented Zero Trust in three months either have very limited environments or are using a generous definition of the term.
+
+Measure progress in concrete terms — MFA coverage percentage, privileged accounts with JIT access, endpoint MDM enrollment rate, ZTNA coverage for remote access — rather than against an abstract maturity score.
+
+The goal isn't Zero Trust as a destination. It's continuous progress toward an architecture where every access request is evaluated, excess access is eliminated, and lateral movement is constrained. Organizations that make deliberate progress in that direction are dramatically more resilient than those that don't.

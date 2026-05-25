@@ -1,0 +1,54 @@
+---
+title: "Business Continuity Planning for the Modern Organization"
+date: "2023-08-18"
+excerpt: "Business continuity planning isn't just disaster recovery — it's about ensuring your organization can operate through any disruption. Here's how to build a plan that holds up."
+tags: ["Business Continuity", "Disaster Recovery", "Risk Management", "Resilience"]
+author: "Sam Wheeler"
+---
+
+Most organizations I assess have some version of a disaster recovery plan. What they often lack is a business continuity plan — and the distinction matters.
+
+Disaster recovery is about restoring IT systems after a failure. Business continuity is about keeping the organization operational during any significant disruption — cyberattacks, natural disasters, key personnel loss, supply chain failures, pandemics. DR is a subset of BC, not a synonym for it.
+
+## Start with Business Impact Analysis
+
+Before you can plan for disruptions, you need to understand what disruptions actually cost. A Business Impact Analysis (BIA) answers these questions:
+
+- Which business functions are most critical?
+- What is the financial and operational impact of interrupting each function?
+- What is the maximum acceptable downtime for each function?
+- What are the minimum resources needed to operate each function at a reduced level?
+
+The outputs of a BIA drive everything else. Your Recovery Time Objectives (RTOs) and Recovery Point Objectives (RPOs) — how long you can be down and how much data you can lose — should be based on actual business requirements, not technical convenience.
+
+## Common BCP Gaps
+
+**Plans that exist but haven't been tested.** A plan that was written two years ago and has never been exercised is largely worthless. People change roles, systems change, and procedures that seemed logical in a planning session often fall apart in practice.
+
+**Overreliance on cloud infrastructure.** Cloud services have their own outages. AWS, Azure, and Google Cloud have all experienced multi-hour, multi-region incidents. If your recovery plan assumes cloud availability, you have a gap.
+
+**Communication plans that don't work.** If your communication plan relies on email and email is down, how do you reach employees? Do you have out-of-band communication options? Do you have current contact information for all employees — including personal cell numbers?
+
+**Single points of failure in people.** If the person who knows how to restore your core systems gets hit by a bus, what happens? Documentation and cross-training address personnel single points of failure.
+
+**Vendor dependencies that aren't planned for.** Your third-party vendors have their own business continuity risks. Critical vendors should be part of your BIA and your planning.
+
+## The Backup Conversation
+
+Backup and recovery is foundational to any BCP. A few principles:
+
+- The 3-2-1 rule: three copies of data, two different storage types, one offsite. For ransomware resilience, add an offline or immutable copy.
+- Test your restores. A backup you've never tested is a backup you can't trust.
+- Know your RTOs and RPOs at the backup level. How long does a full restore take? Does that meet your business requirements?
+
+## Testing Makes Plans Real
+
+Tabletop exercises, where leadership walks through a scenario together, are the minimum bar. Functional exercises, where you actually execute recovery procedures, are better. Full-scale exercises, where you simulate an actual event and test end-to-end recovery, are best.
+
+Annual tabletops plus periodic functional testing of your most critical recovery procedures is a practical target for most organizations.
+
+## Don't Confuse Activity with Readiness
+
+Having a BCP binder on the shelf satisfies a compliance checkbox. Actually being able to continue your business through a significant disruption requires testing, maintenance, and a culture that treats resilience as a real priority — not a once-a-year exercise.
+
+The goal is an organization that can absorb a hit and keep operating. That's built through preparation, not documentation.

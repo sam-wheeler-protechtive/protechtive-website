@@ -1,0 +1,56 @@
+---
+title: "Endpoint Detection and Response: Why Antivirus Isn't Enough Anymore"
+date: "2024-06-06"
+excerpt: "Traditional antivirus stopped most threats in the malware landscape of 2010. Modern attackers have long since moved past signature-based detection. Here's what EDR does differently."
+tags: ["EDR", "Endpoint Security", "Threat Detection", "Security Tools"]
+author: "Sam Wheeler"
+---
+
+For most of the history of enterprise security, the endpoint protection category meant antivirus: signature-based detection that compares files against a database of known malware. It was effective when malware was relatively simple and attackers were mostly launching mass campaigns with known tools.
+
+The attack landscape has evolved significantly. Modern attackers — including the ransomware groups that routinely compromise enterprise organizations — operate without malware that triggers signatures, using "living off the land" techniques that leverage legitimate system tools. Against this approach, traditional antivirus is largely blind.
+
+## What EDR Does Differently
+
+Endpoint Detection and Response (EDR) tools monitor endpoint behavior rather than just scanning files. Instead of asking "is this file known malware?", EDR asks "is this behavior consistent with an attack?"
+
+Behavioral indicators EDR monitors:
+
+- Unusual process spawning (cmd.exe launched from a Word document)
+- Credential dumping attempts (accessing the LSASS process)
+- Lateral movement (enumeration of other systems, credential theft, remote execution)
+- Persistence mechanisms (registry modifications, scheduled tasks created in suspicious contexts)
+- Mass file encryption or deletion (ransomware behavior)
+- Command-and-control communications patterns
+
+When these behaviors are detected, EDR can alert, contain the endpoint (isolate it from the network), and provide forensic data about exactly what happened.
+
+## The Detection vs. Prevention Debate
+
+EDR tools vary in how they balance prevention and detection. Some prioritize blocking suspicious behavior (more aggressive, more false positives). Others prioritize detection and alerting (more visibility, requires response capability).
+
+The right balance depends on your environment. Environments with established SOC capability and response processes can tune toward detection. Environments without that capability may need more aggressive prevention defaults.
+
+## Key EDR Capabilities to Evaluate
+
+**Behavioral detection quality.** The core function. Evaluate detection rates against known attack scenarios, false positive rates (high false positive rates burn analyst attention), and efficacy against common attack techniques.
+
+**Threat intelligence integration.** EDR tools that integrate with threat intelligence feeds can alert on known attacker infrastructure, TTPs, and indicators of compromise.
+
+**Incident response capability.** Can analysts remotely investigate endpoints, collect forensic artifacts, and contain compromised systems without physical access? This is essential for distributed environments.
+
+**Threat hunting.** Proactive searching through endpoint telemetry for signs of compromise that didn't generate automated alerts. Requires analyst time but catches sophisticated threats.
+
+**XDR integration.** Extended Detection and Response (XDR) tools integrate endpoint telemetry with network, identity, email, and cloud data to provide broader visibility and cross-source correlation.
+
+## Market Landscape
+
+The EDR market has matured significantly. Major platforms worth evaluating: CrowdStrike Falcon, SentinelOne Singularity, Microsoft Defender for Endpoint (strong value if you're already in the Microsoft ecosystem), and Palo Alto Cortex XDR.
+
+For mid-market organizations, Microsoft Defender for Endpoint's inclusion in Microsoft 365 E3/E5 licensing makes it the most cost-effective option if licensing is already in place. For organizations wanting best-of-breed detection, CrowdStrike and SentinelOne are consistently top-ranked in evaluations.
+
+## The People and Process Problem
+
+EDR generates alerts. Alerts require people to review and respond to them. Organizations that deploy EDR without the analyst capacity to act on its findings get dashboards full of unreviewed alerts — and no security benefit.
+
+If you don't have internal analyst capacity, either a managed detection and response (MDR) service or a managed security service provider (MSSP) that manages your EDR is the answer. The tool without the people is not a control.

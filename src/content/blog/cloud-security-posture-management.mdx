@@ -1,0 +1,55 @@
+---
+title: "Cloud Security Posture Management: Staying Ahead in AWS and Azure"
+date: "2024-09-17"
+excerpt: "Cloud misconfigurations are the leading cause of cloud data breaches. CSPM tools provide continuous visibility into your cloud posture — here's how they work and what to look for."
+tags: ["Cloud Security", "CSPM", "AWS", "Azure", "Misconfiguration"]
+author: "Sam Wheeler"
+---
+
+The cloud promised unprecedented agility and scale — and delivered on both. What it also delivered, at scale, is an explosion of security misconfigurations. S3 buckets left public, Azure storage accounts with anonymous access, overpermissioned IAM roles, unencrypted databases, security groups that expose everything to the internet.
+
+These aren't edge cases. The Verizon Data Breach Investigations Report consistently identifies misconfiguration as one of the top contributing factors in data breaches. Cloud Security Posture Management (CSPM) is the category of tools designed to catch these issues continuously.
+
+## What CSPM Does
+
+CSPM tools continuously assess your cloud environment against security best practices and compliance benchmarks, identifying misconfigurations, compliance violations, and security risks before they're exploited.
+
+Key capabilities:
+
+**Asset inventory.** A real-time inventory of everything in your cloud environment — compute instances, storage, databases, networking, identities — across accounts and regions. Organizations regularly discover resources they didn't know they had.
+
+**Misconfiguration detection.** Automated checks against frameworks like CIS Benchmarks for AWS/Azure/GCP, NIST, and compliance standards (SOC 2, HIPAA, PCI DSS). Results are prioritized by severity and typically include remediation guidance.
+
+**Drift detection.** Identifies when configurations change in ways that violate your security baseline — catching unauthorized changes that might indicate an incident or introduce risk.
+
+**Compliance reporting.** Out-of-the-box compliance dashboards that map your current state against specific frameworks. Useful for audit preparation and executive reporting.
+
+**Attack path analysis.** More advanced CSPM tools analyze combinations of misconfigurations that, chained together, create exploitable attack paths. A single open port may not be critical; an open port + excessive IAM permissions + no encryption on the target database is a critical issue.
+
+## Built-in vs. Third-Party
+
+Major cloud providers offer native CSPM capabilities:
+
+**AWS Security Hub** aggregates findings from AWS services (Config, GuardDuty, Inspector) and third-party integrations, mapped to security standards. Strong value for AWS-focused environments.
+
+**Microsoft Defender for Cloud** provides CSPM for Azure, with CWPP (workload protection) capabilities and multi-cloud support. Excellent integration with Microsoft's security ecosystem.
+
+**GCP Security Command Center** provides similar capabilities for Google Cloud.
+
+Third-party CSPM tools — Wiz, Prisma Cloud (Palo Alto), Lacework, Orca Security — often provide better cross-cloud coverage, deeper attack path analysis, and more polished reporting. For multi-cloud environments, they're typically the better choice.
+
+## Implementation Considerations
+
+**Start in read-only mode.** CSPM tools need read access to your cloud environments to assess them. Most findings are informational — they don't automatically remediate (though some support automated remediation for specific finding types).
+
+**Don't boil the ocean.** Initial deployments surface hundreds or thousands of findings. Prioritize critical and high findings that represent genuine attack surface. Build a remediation cadence rather than trying to fix everything at once.
+
+**Assign ownership.** Cloud security is a shared responsibility between security and cloud/devops teams. CSPM findings need to route to the teams that can fix them. Tooling that integrates with your ticketing system (Jira, ServiceNow) makes this manageable.
+
+**Build it into IaC reviews.** The best time to catch a misconfiguration is before it's deployed. CSPM tools that integrate with Infrastructure-as-Code pipelines (Terraform, CloudFormation) can flag misconfigurations before they reach production.
+
+## What Good Looks Like
+
+A mature cloud security posture: CSPM running continuously with findings routed to owning teams, a SLA for remediating critical and high findings (typically 7–30 days), compliance dashboards reviewed by security leadership monthly, and IaC security scanning integrated into CI/CD pipelines.
+
+Getting there takes iteration. Start with continuous visibility and a remediation process for the most critical findings, and build from there.

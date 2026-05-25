@@ -1,0 +1,51 @@
+---
+title: "Multi-Factor Authentication: Beyond the Basics"
+date: "2023-06-12"
+excerpt: "MFA is essential — but not all MFA is equal. Understanding the threat landscape helps you choose the right approach for your organization."
+tags: ["MFA", "Identity", "Authentication", "Zero Trust"]
+author: "Sam Wheeler"
+---
+
+By now, most organizations understand that MFA is necessary. The "use MFA" message has gotten through. What's less understood is that MFA isn't a monolithic control — different methods have dramatically different security properties, and the difference matters.
+
+## Why SMS-Based MFA Falls Short
+
+SMS one-time codes are far better than nothing. But SIM swapping attacks — where an attacker convinces a mobile carrier to transfer your phone number to a SIM they control — render SMS MFA ineffective. Telecom social engineering is genuinely not difficult, and it's been used to compromise high-value targets ranging from cryptocurrency holders to executives.
+
+SMS MFA also doesn't protect against real-time phishing attacks, where an attacker simultaneously relays credentials to the real site and captures the OTP before it expires.
+
+For consumer accounts with no better option, SMS MFA is acceptable. For business accounts, especially anything with administrative access, you can do better.
+
+## TOTP Authenticator Apps: A Significant Step Up
+
+Time-based One-Time Password (TOTP) apps like Google Authenticator, Authy, and Microsoft Authenticator generate codes locally on the device. There's no SMS intercept risk.
+
+The weakness: TOTP is still susceptible to real-time phishing. If a user enters their credentials and TOTP code into a convincing fake login page, the attacker can relay both to the real site before the code expires. Evilginx2 and similar tools automate this attack.
+
+TOTP is a solid choice for most business applications, particularly combined with other controls like conditional access policies.
+
+## Push Notifications: Convenient but Exploitable
+
+Push-based MFA (like Microsoft Authenticator or Duo's push) is popular because it's easy — a notification appears, the user approves it. But this convenience creates an attack vector: MFA fatigue.
+
+An attacker who has compromised a user's credentials can trigger repeated MFA push requests, betting that the user will eventually approve one out of confusion or to make the notifications stop. This has been used successfully against organizations including Uber and Okta.
+
+Mitigations include number matching (the push shows a code the user must verify against what's displayed on their login screen) and additional context (showing location, application, and IP in the push). If you use push-based MFA, enable these features.
+
+## Hardware Security Keys: The Gold Standard
+
+FIDO2/WebAuthn hardware keys (YubiKey is the most common example) are phishing-resistant by design. The authentication is cryptographically bound to the specific site you're logging into — a phishing site cannot replay the credential because it fails the origin check.
+
+For privileged accounts — IT administrators, finance executives, anyone with access to your most sensitive systems — hardware keys are worth the cost and minor friction. They're approximately $50–70 per device.
+
+## Phishing-Resistant MFA Is the Goal
+
+If you're picking a direction, move toward phishing-resistant MFA for your highest-value accounts. FIDO2 hardware keys or passkeys (the software-based FIDO2 implementation built into modern platforms) are the options here.
+
+Microsoft, Google, and Okta all support passkeys now. Browser-based passkey support is maturing quickly. This is where the industry is heading — and for good reason.
+
+## Practical Guidance
+
+For most organizations today: deploy TOTP authenticator apps as a baseline, enable number matching on any push-based MFA you use, deploy hardware keys for privileged and high-value accounts, and have a roadmap to passkeys as platform support matures.
+
+Perfect is the enemy of good — any MFA is dramatically better than none. But knowing the threat landscape helps you make smarter choices about where to invest.

@@ -1,0 +1,55 @@
+---
+title: "Privileged Access Management: Controlling Your Crown Jewels"
+date: "2025-03-13"
+excerpt: "Privileged accounts are the keys to your kingdom — and attackers know it. PAM is the discipline of securing administrative access in a way that doesn't break how work gets done."
+tags: ["PAM", "Privileged Access", "Identity", "Zero Trust", "Access Control"]
+author: "Sam Wheeler"
+---
+
+In the post-compromise phase of most significant breaches, there's a common pattern: the attacker used privileged credentials. Domain admin accounts, database administrator accounts, cloud management credentials, local admin rights — these are what attackers need to do maximum damage, and they're typically available if you know where to look.
+
+Privileged Access Management (PAM) is the discipline of securing these accounts specifically, with controls appropriate to their power.
+
+## Why Privileged Accounts Are So Dangerous
+
+A compromised standard user account is bad. The attacker can access what that user can access and potentially move laterally to other accounts with similar privileges.
+
+A compromised privileged account is catastrophic. A domain administrator can reset every password in the environment, disable security tools, access every file server, and deploy ransomware across the entire network — simultaneously. Cloud administrator credentials can delete your entire cloud infrastructure.
+
+The asymmetry between the value of privileged accounts to attackers and the typical controls applied to them is one of the most significant gaps in most security programs.
+
+## Common Privileged Account Failures
+
+**Shared admin accounts.** "There's one domain admin account that the IT team uses" — this is common, terrible for accountability, and impossible to respond to when credentials are compromised.
+
+**Admin accounts used for daily work.** IT administrators who check email and browse the web with their admin accounts create unnecessary risk. Normal work should happen with normal accounts; elevated access should be used only when needed.
+
+**Excessive local admin rights.** Giving users local administrator rights on their workstations is common (often to avoid helpdesk tickets). It's also how most ransomware successfully spreads — malware running in a local admin context can install, modify, and persist in ways it can't in a standard user context.
+
+**No monitoring of privileged activity.** Even when privileged accounts are properly managed, if privileged activity isn't logged and reviewed, there's no way to detect misuse or compromise.
+
+**Service accounts with excessive privileges.** Application service accounts often accumulate more permissions than they need. They're rarely reviewed and often don't have expiring passwords or rotation schedules.
+
+## Core PAM Controls
+
+**Privileged Account Discovery.** Start by finding every privileged account in your environment. This is often more difficult than it sounds — privileged accounts accumulate in Active Directory, in cloud IAM, in application databases, and in local workstation admin groups. Tools that automate this discovery are worth the investment.
+
+**Least Privilege Enforcement.** Reduce every account's privileges to the minimum required for its function. Remove domain admin rights from accounts that don't need them. Remove local admin from users who don't require it (and implement a process for temporary elevation when genuinely needed).
+
+**Just-in-Time (JIT) Access.** Rather than permanent privileged access, grant elevation for specific tasks for a specific time period. "I need domain admin to run this deployment — approve a two-hour elevation window." This dramatically reduces the attack surface of privileged accounts.
+
+**Privileged Access Workstations (PAWs).** Dedicated, hardened workstations used only for privileged activity — no email, no web browsing, no general applications. Expensive in terms of friction but the right answer for the highest-privilege accounts.
+
+**Session Recording and Monitoring.** Record privileged sessions for audit and incident response. Know what every privileged account does, and alert on anomalous patterns.
+
+## PAM Technology
+
+The PAM market is mature: CyberArk, BeyondTrust, and Delinea are the primary enterprise platforms. Microsoft's own tooling (Privileged Identity Management in Entra ID, Microsoft Defender for Identity) provides strong PAM capability in Microsoft-centric environments.
+
+For smaller organizations, starting with JIT access for cloud privileged roles (AWS SSO, Entra PIM) and removing unnecessary local admin rights provides significant risk reduction without requiring a dedicated PAM platform investment.
+
+## The Cultural Dimension
+
+PAM initiatives face resistance from IT teams who are accustomed to permanent privileged access and find JIT workflows slow. This resistance is understandable — the friction is real.
+
+Addressing it requires honest conversation about why it matters, a well-designed JIT workflow that minimizes friction for legitimate work, and leadership commitment that the controls are real and apply to everyone.

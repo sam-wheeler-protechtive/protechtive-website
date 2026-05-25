@@ -1,0 +1,60 @@
+---
+title: "Zero Trust Remote Access: Is It Time to Replace Your VPN?"
+date: "2025-08-19"
+excerpt: "VPNs were designed for a world where the office was the security perimeter. Zero Trust Network Access offers a fundamentally different model — here's how to evaluate the transition."
+tags: ["Zero Trust", "ZTNA", "VPN", "Remote Access", "Network Security"]
+author: "Sam Wheeler"
+---
+
+The corporate VPN has been the remote access standard for decades. Connect to VPN, and you're "on the network" — access to resources that are only reachable from within the corporate network becomes available. It's a model that made sense when the office and the internal network were the security perimeter.
+
+That model has significant weaknesses in the current environment, and Zero Trust Network Access (ZTNA) offers a materially different approach. Whether it makes sense to replace your VPN depends on where you are and what you're trying to accomplish.
+
+## The Problems with Traditional VPN
+
+**Full network access.** When a user connects to a traditional VPN, they typically get broad access to the internal network — not just to the specific applications they need. A compromised endpoint on VPN can reach many systems beyond the one it was trying to access.
+
+**The lateral movement problem.** If an attacker steals VPN credentials or compromises an endpoint that's connected to VPN, they have network-level access to everything the VPN segment can reach. This is how initial access turns into full network compromise in many incidents.
+
+**No device trust evaluation.** Traditional VPN authenticates the user (credentials) but typically doesn't evaluate the health of the device. A personal laptop with malware can connect to VPN as long as the user knows the credentials.
+
+**Performance and scalability issues.** VPN traffic hairpins through central infrastructure, adding latency and creating capacity constraints at scale. Organizations that scaled remote work rapidly during the pandemic hit these limits.
+
+**Legacy authentication.** Older VPN infrastructure often doesn't integrate cleanly with modern MFA solutions and identity providers.
+
+## What ZTNA Does Differently
+
+Zero Trust Network Access grants access to specific applications rather than network segments, based on verified identity and device posture — before granting any access.
+
+The core difference: VPN says "you're on the network, access what the network allows." ZTNA says "you want to access this specific application — prove who you are, prove your device is healthy, and if both pass, you get access to that application — nothing else."
+
+This addresses several VPN problems:
+
+**Application-level access.** Compromised ZTNA credentials give access to specific applications, not the broader network. Lateral movement from a ZTNA compromise is significantly constrained.
+
+**Continuous device assessment.** ZTNA evaluates device posture at connection time (and some solutions, continuously). An unmanaged device, a device with disabled endpoint protection, or a device with outdated patches can be blocked from access or given limited access to a subset of applications.
+
+**Identity integration.** ZTNA is built to integrate with modern identity providers and enforce strong authentication requirements per application.
+
+**Performance.** Many ZTNA solutions route traffic optimally rather than hairpinning through central infrastructure, reducing latency for cloud-hosted applications.
+
+## The Transition Considerations
+
+Moving from VPN to ZTNA is a meaningful infrastructure project. Key considerations:
+
+**Application inventory first.** You can't implement ZTNA without knowing which applications remote users need to access and what the access requirements for each are. This inventory is often missing or incomplete.
+
+**Not all applications work cleanly with ZTNA.** Legacy applications with unusual network requirements, thick-client applications with complex network dependencies, and some development workflows may need special handling or coexistence with VPN.
+
+**Change management.** Users accustomed to "connect to VPN and everything works" need to understand a new access model. The transition requires communication and support.
+
+**Coexistence period.** Most organizations run ZTNA and VPN in parallel during transition, moving applications to ZTNA incrementally as testing confirms functionality.
+
+## When VPN Still Makes Sense
+
+ZTNA isn't universally better. VPN remains appropriate for:
+- Network-level access requirements that ZTNA can't address (some legacy systems, OT network access)
+- Site-to-site connectivity (ZTNA is user-to-application; site-to-site VPN serves a different function)
+- Organizations where the cost and complexity of ZTNA transition exceed the security benefit
+
+For most organizations with significant remote workforces and cloud-hosted applications, a long-term ZTNA roadmap is the right direction. VPN as a permanent architecture is increasingly difficult to defend.

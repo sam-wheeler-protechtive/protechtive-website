@@ -1,0 +1,60 @@
+---
+title: "Securing Your SaaS Stack: Managing Shadow IT"
+date: "2024-11-26"
+excerpt: "The average enterprise uses hundreds of SaaS applications — many of which IT doesn't know about. Shadow IT is a real security problem, and the answer isn't just saying no."
+tags: ["SaaS Security", "Shadow IT", "Cloud Security", "CASB"]
+author: "Sam Wheeler"
+---
+
+The shadow IT problem has changed character over the past decade. A decade ago, shadow IT meant employees spinning up unsanctioned cloud servers. Today it more commonly means employees signing up for SaaS applications with a company email address and a credit card.
+
+The scale is significant. Research from Productiv and others consistently puts the number of SaaS applications in use at mid-market companies in the hundreds. IT organizations are often aware of a fraction of these.
+
+## Why Shadow IT Happens
+
+Shadow IT is mostly not malicious. It happens because:
+
+- Teams need tools that IT procurement moves too slowly to provide
+- Users find a tool that solves a problem better than what's approved
+- Free tiers make it trivially easy to start using a product without any formal process
+- Nobody realizes their individual tool choice has organizational security implications
+
+Understanding this is important because it shapes the response. Shadow IT addressed as a policy enforcement problem — "stop using unapproved tools" — produces either compliance theater or user resentment without actually solving the problem. Shadow IT addressed as a governance and procurement problem produces better outcomes.
+
+## The Real Security Risks
+
+**Data in unvetted applications.** When an employee uses an unapproved SaaS tool, your data governance applies to the tool not at all. You don't know what data they're storing there, how it's secured, who at the vendor has access, or whether it would survive a vendor security incident.
+
+**Orphaned accounts.** Shadow IT tools often use company email addresses without SSO integration. When an employee leaves, their account in that tool persists — indefinitely — because nobody knows it exists.
+
+**Credential exposure.** Employees reusing corporate credentials in shadow IT tools creates credential exposure risk. When the shadow IT tool gets breached (and less security-mature SaaS vendors are breached more often), those credentials surface in breach databases.
+
+**Compliance scope expansion.** Data that should stay within your compliance boundary (PHI, PCI card data, financial records) flowing into unapproved SaaS tools expands your compliance scope without your knowledge.
+
+## Discovering What You Have
+
+You can't manage what you don't know exists. Discovery options:
+
+**CASB (Cloud Access Security Broker).** Purpose-built for this problem. CASB tools sit between your users and the internet (or integrate with your SSO and network logs) and discover cloud service usage across your organization. They catalog discovered services, assess their risk, and allow you to enforce policies.
+
+**Network analysis.** DNS query logs and web proxy logs reveal SaaS traffic even without a dedicated CASB. Not as actionable but useful for organizations without CASB investment.
+
+**Expense report analysis.** SaaS subscriptions often show up on expense reports or corporate card statements. Accounts payable data can surface tools that aren't visible in network traffic.
+
+**Employee surveys.** Sometimes just asking "what tools do you use?" surfaces significant shadow IT.
+
+## The Response: Govern, Don't Just Prohibit
+
+The most effective responses to shadow IT:
+
+**Improve legitimate procurement.** If IT can approve new tools in two days instead of three months, the incentive to go around the process drops significantly.
+
+**Create a curated app catalog.** A self-service catalog of pre-approved applications for common use cases reduces the need to go rogue.
+
+**SSO-enable approved tools.** When approved tools integrate with SSO, account lifecycle management becomes automatic. When employees leave, their access is revoked automatically.
+
+**Risk-tiered governance.** Not all shadow IT needs the same response. A team using Figma for design work is different from finance using an unapproved expense tool that stores financial data. Respond proportionally.
+
+**Amnesty for disclosure.** Creating a channel where teams can disclose what they're using without punitive response surfaces the actual landscape. Teams that fear punishment hide their tools; they don't stop using them.
+
+The goal is a SaaS environment where what's in use is known, governed appropriately, and integrated with your identity management — not a perfectly controlled environment where people are blocked from getting work done.

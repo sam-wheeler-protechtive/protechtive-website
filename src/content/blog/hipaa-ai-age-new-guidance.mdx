@@ -1,0 +1,63 @@
+---
+title: "HIPAA in the Age of AI: New Guidance and What Healthcare Organizations Should Watch"
+date: "2026-03-19"
+excerpt: "AI tools processing health data raise new questions under HIPAA — and HHS has begun providing guidance. Here's what healthcare organizations need to know."
+tags: ["HIPAA", "AI", "Healthcare", "PHI", "Compliance"]
+author: "Sam Wheeler"
+---
+
+Healthcare organizations are adopting AI at an accelerating pace — clinical decision support, administrative automation, documentation assistance, prior authorization processing, imaging analysis. The benefits are real and significant. So are the HIPAA compliance questions that AI adoption raises.
+
+HHS has begun addressing these questions through guidance documents, but the regulatory picture is still developing. Healthcare organizations that are deploying AI need to be thinking through HIPAA implications proactively.
+
+## When AI Tools Process PHI
+
+The core question is whether an AI tool that processes health data is processing Protected Health Information under HIPAA. Generally: if a tool is processing information that can be linked to specific individuals and pertains to their health status, treatment, or payment for care, it's likely processing PHI.
+
+This means the vendor of that AI tool is likely a Business Associate — and needs a BAA. The tool itself needs to meet HIPAA Security Rule requirements. And the health organization needs to conduct appropriate due diligence on the vendor's security and compliance posture.
+
+Many AI vendors in the healthcare space have been slow to sign BAAs or to represent HIPAA compliance, creating a gap between what clinical and administrative teams want to use and what's been properly vetted. This gap is a compliance and security risk that needs to be managed.
+
+## The De-identification Option and Its Limits
+
+HIPAA doesn't apply to de-identified information — data that has been properly de-identified under either the Safe Harbor or Expert Determination methods. Some healthcare organizations believe that "removing obvious identifiers" before feeding data to AI tools creates de-identified data. This is often wrong.
+
+HIPAA Safe Harbor de-identification requires removal of 18 specific categories of identifiers. Expert Determination requires that an expert applies statistical and scientific principles to verify that the risk of re-identification is very small.
+
+Modern AI systems can re-identify individuals from data that appears de-identified but retains subtle patterns. The Expert Determination method requires accounting for this. Many "de-identification" practices in healthcare don't meet the bar, creating the illusion of compliance without the reality.
+
+## AI and the Minimum Necessary Standard
+
+HIPAA's minimum necessary standard requires that uses and disclosures of PHI be limited to the minimum information necessary to accomplish the intended purpose. AI tools that ingest comprehensive patient records when only a subset of data is needed for the task may not meet this standard.
+
+Implementing AI solutions that are designed with data minimization principles — feeding models only the data elements required for the specific function — is both a compliance practice and a data security practice.
+
+## Training Data and HIPAA
+
+If a healthcare organization is developing or fine-tuning AI models using patient data, the HIPAA analysis is particularly important:
+
+- Was patient data used for training with appropriate authorization?
+- Is there a valid HIPAA legal basis (treatment, operations, with authorization, under research provisions)?
+- Have BAAs been signed with any vendors involved in the training process?
+- Can the model be queried in ways that reveal training data (model inversion attacks)?
+
+The last point is an area of active research. AI models that have been trained on sensitive data can sometimes be induced to reveal information from their training set. This is a security consideration in addition to a compliance one.
+
+## Vendor Due Diligence for AI Health Tools
+
+When evaluating AI vendors for healthcare use:
+
+- Do they sign a BAA without requiring unreasonable modifications?
+- Are they SOC 2 Type II certified (or equivalent)?
+- Where is data processed and stored? Is it within HIPAA-compliant infrastructure?
+- Do they use customer data to train models? If so, under what terms?
+- What are their subprocessors, and are those subprocessors bound by appropriate agreements?
+- What is their incident response and breach notification process?
+
+The AI health technology vendor market is maturing. Reputable vendors in the space have clear HIPAA compliance programs and will engage transparently on these questions. Vendors who can't or won't answer them aren't ready for healthcare deployment.
+
+## Watching the Regulatory Space
+
+HHS continues to develop guidance on AI in healthcare, including questions around algorithmic bias, model transparency, and patient consent for AI-assisted clinical decisions. The FTC has also addressed AI in healthcare in the context of consumer protection.
+
+Healthcare organizations building AI programs should designate someone to track regulatory developments in this space and ensure that program decisions reflect current guidance. The regulatory environment will continue to evolve, and organizations that stay current will have less to retrofit.

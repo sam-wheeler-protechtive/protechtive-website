@@ -1,0 +1,49 @@
+---
+title: "DevSecOps: Shifting Security Left in Your Development Pipeline"
+date: "2023-09-25"
+excerpt: "Catching security issues after deployment is expensive and disruptive. DevSecOps integrates security into the development process so problems are found earlier, when they're cheaper to fix."
+tags: ["DevSecOps", "Application Security", "Development", "CI/CD"]
+author: "Sam Wheeler"
+---
+
+The old model of security review was a gate at the end of the development process: build the thing, then hand it to security for review before release. In practice, this meant security reviews were compressed, issues were discovered too late to fix properly, and security became a bottleneck that teams worked around rather than with.
+
+DevSecOps is the operational model for doing this differently.
+
+## What DevSecOps Actually Means
+
+DevSecOps isn't a product category — it's a philosophy and a set of practices. The core idea: security belongs in every phase of the software development lifecycle, not just at the end.
+
+"Shifting left" refers to the position of security on the traditional SDLC timeline. Earlier in the process means cheaper and faster to fix. A vulnerability found in code review takes minutes to address. The same vulnerability found after deployment might require an emergency patch, a security advisory, and potentially customer notifications.
+
+## Key Practices
+
+**Threat modeling during design.** Before a line of code is written, think through the threats: what could an attacker do with this feature? What data does it handle? What trust boundaries does it cross? Threat modeling at the design phase shapes architectural decisions before they become expensive to change.
+
+**Static Application Security Testing (SAST).** Automated tools that analyze source code for common vulnerability patterns — injection flaws, insecure cryptography, hardcoded credentials, and others. SAST runs in the CI/CD pipeline and fails builds that introduce new findings. Tools like Semgrep, SonarQube, and GitHub Advanced Security do this well.
+
+**Software Composition Analysis (SCA).** Your application is built on open-source dependencies, and those dependencies have their own vulnerabilities. SCA tools scan your dependency tree and alert when known-vulnerable packages are in use. Dependabot, Snyk, and Mend are commonly used.
+
+**Secrets scanning.** Accidentally committed credentials — API keys, database passwords, private certificates — are alarmingly common. Pre-commit hooks and CI/CD integration that scan for secrets before they're pushed prevent these from reaching version control. GitGuardian and GitHub's built-in secret scanning address this.
+
+**Dynamic Application Security Testing (DAST).** Unlike SAST, which analyzes code, DAST tests a running application the way an attacker would. Automated scanners probe your application's attack surface. OWASP ZAP and Burp Suite (with their automation features) are common choices.
+
+**Security in code review.** Human security review scales poorly as a sole control, but incorporating security-minded reviewers or checklists into code review catches issues that automated tools miss — logic flaws, authorization problems, business logic vulnerabilities.
+
+## The Cultural Component
+
+The technical practices are the easier part. The harder part is organizational: making security feel like something developers do rather than something done to them.
+
+This means:
+- Security teams being available to help, not just audit
+- Developer education on secure coding practices relevant to your stack
+- Creating shared ownership of security outcomes
+- Making security tooling fast enough that it doesn't slow down the pipeline significantly
+
+Security teams that approach developers as partners rather than adversaries get dramatically better outcomes.
+
+## Starting Points
+
+If you're just beginning, start with secrets scanning and SCA — both have immediate, concrete value and low false positive rates. Add SAST once you have the baseline tooling in place. Build from there toward threat modeling and DAST as your program matures.
+
+The investment pays off in fewer production vulnerabilities, faster security reviews, and a development culture that treats security as a feature, not an afterthought.

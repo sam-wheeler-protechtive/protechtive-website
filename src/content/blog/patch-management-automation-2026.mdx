@@ -1,0 +1,64 @@
+---
+title: "Patch Management in 2026: Automation Is No Longer Optional"
+date: "2026-01-28"
+excerpt: "Unpatched vulnerabilities remain one of the leading causes of security incidents. Manual patch processes can't keep pace with the volume and speed of modern vulnerability disclosure."
+tags: ["Patch Management", "Vulnerability Management", "Security Operations", "Automation"]
+author: "Sam Wheeler"
+---
+
+Patch management has been a security fundamental for as long as there have been software vulnerabilities. It's also one of the controls that organizations most consistently get wrong — not because they don't understand the importance, but because the operational complexity makes consistent execution difficult.
+
+In 2026, manual patch processes are a liability. The volume of vulnerability disclosures, the speed of exploitation, and the attack surface complexity of modern environments make automation a requirement, not a nice-to-have.
+
+## The Problem with Manual Patch Management
+
+The typical manual patching process: vulnerability scanner identifies a finding, a human reviews it, a ticket is created, a change management review is scheduled, patching is scheduled for the next maintenance window, the patch is applied, the finding is closed. This process works for small environments with infrequent vulnerabilities and stable change management schedules.
+
+In reality: vulnerability scanners produce hundreds of findings per cycle. Critical vulnerabilities are being exploited within hours of disclosure. Maintenance windows may be weeks away. The change management process creates more friction than urgency warrants. Findings age out without being patched.
+
+The result: the average time-to-patch for critical vulnerabilities in most organizations is measured in weeks. Active exploitation often occurs within days.
+
+## The Exploitation Timeline Has Compressed
+
+The time from vulnerability disclosure to active exploitation has consistently shrunk. For highly impactful vulnerabilities — especially those in internet-facing infrastructure, VPNs, firewalls, and widely-deployed software — exploitation within 24–72 hours of disclosure is now common.
+
+Manual processes that work on a weekly or bi-weekly cycle simply can't respond to this timeline. When Ivanti, Fortinet, or Palo Alto discloses a critical vulnerability in widely-deployed edge infrastructure, attackers aren't waiting for your next change window.
+
+## Automation Strategies
+
+**Automated patching for non-critical systems.** For endpoints and servers with low business criticality, configure automated patch deployment without manual review. Vendor-provided patches for operating systems and common applications can be deployed automatically with defined windows and rollback procedures.
+
+**Risk-based prioritization.** Not all vulnerabilities are equal. Automation tools that prioritize based on exploitability (is there active exploitation in the wild?), EPSS score (what's the probability of exploitation?), and asset criticality (is this a production database or a test server?) are significantly more effective than CVSS-severity-only prioritization.
+
+**Automated SLA tracking.** Define SLAs for vulnerability remediation (Critical: 7 days, High: 30 days, Medium: 90 days) and automate tracking against those SLAs. Automated escalation when SLAs are at risk is better than discovering overdue patches at the next scan.
+
+**Vulnerability management platforms.** Modern vulnerability management platforms — Tenable, Rapid7 InsightVM, Qualys, Microsoft Defender Vulnerability Management — provide continuous scanning, risk-based prioritization, and integration with ticketing systems that make tracking and escalation manageable.
+
+**Infrastructure as Code patching.** For cloud infrastructure managed via IaC, "patching" often means updating AMIs, container base images, or configuration versions and redeploying. Automation that regularly updates base images and triggers CI/CD pipelines provides faster patching cycles than manual procedures.
+
+## What Needs Human Review
+
+Automation doesn't mean zero human oversight. Situations requiring human review before patching:
+
+- Critical production systems with complex dependencies (database servers, core business applications)
+- Patches that have had known issues or rollbacks in other organizations
+- Systems with unusual change control requirements (regulated environments, production OT systems)
+- Situations where the patch itself requires configuration changes beyond binary update
+
+Build automation for the 80% of cases that don't need review, and reserve human attention for the 20% that genuinely does.
+
+## Accountability and Metrics
+
+Patch management without metrics doesn't improve. Track:
+- Mean time to remediate critical vulnerabilities (MTTC)
+- Percentage of critical vulnerabilities remediated within SLA
+- Patch compliance rate by asset category
+- Age distribution of open findings
+
+Trend these over time. Present them in security program reviews. Use them to identify where the process is breaking down — whether that's detection (scanner coverage gaps), tracking (findings not being addressed), or execution (patches being applied too slowly).
+
+## The Regulatory Pressure
+
+Increasingly, regulatory frameworks and cyber insurance policies are requiring documented, operationalized patch management programs — not just a policy. HIPAA-covered entities and federal contractors particularly face explicit patching requirements.
+
+If your patch management program is primarily a policy document rather than an operational reality, 2026 is the year to close that gap.
