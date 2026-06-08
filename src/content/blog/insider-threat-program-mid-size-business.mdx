@@ -1,0 +1,57 @@
+---
+title: "How to Build an Insider Threat Program for a Mid-Size Business"
+date: "2026-06-08"
+excerpt: "Insider threat programs sound like surveillance to most employees. Here's how mid-size companies can build one that catches real risk without poisoning trust."
+tags: ["Insider Threat", "Security Program", "Risk Management", "Data Protection"]
+author: "Sam Wheeler"
+---
+
+Most mid-size companies have an insider threat problem and no insider threat program. They have an acceptable use policy, an offboarding checklist, and maybe some DLP rules someone configured three years ago and never revisited. That's not a program — it's a collection of artifacts that happen to touch the same topic.
+
+The reluctance to build something more deliberate usually comes down to one concern: insider threat programs sound like surveillance, and surveillance poisons trust. Leadership worries that monitoring employees will damage culture, trigger turnover, or create legal exposure. Those concerns are valid when a program is built badly. They're not a reason to skip the work — they're a reason to build it well.
+
+## Insider Risk Isn't Mostly Malicious
+
+Start by getting the threat model right, because most companies don't. When people hear "insider threat," they picture a disgruntled employee stealing source code on the way out the door. That happens, but it's the minority case.
+
+The bulk of insider risk is **negligent**, not malicious: an employee uploads a customer database to a personal Google Drive to work from home, a departing salesperson exports the CRM "just in case," a contractor reuses credentials across systems they shouldn't have access to in the first place. The controls that catch negligent behavior — access governance, data handling visibility, departure procedures — also happen to be the controls that catch the rare malicious actor. Build for the common case and you cover the uncommon one too.
+
+## Start with Access, Not Monitoring
+
+The instinct is to reach for monitoring tools first. Don't. The highest-leverage starting point is figuring out who has access to what, and why.
+
+Run an access review across your critical systems — financial systems, customer data platforms, source code repositories, HR systems. For each one, ask: does this person's role actually require this access, and when was it last reviewed? In most mid-size companies, this exercise alone surfaces a meaningful list of access grants that should never have persisted — former project members, departed managers' direct reports who inherited access during a reorg, contractors whose engagements ended months ago.
+
+Reducing standing access does two things at once. It shrinks the population of people who could cause harm, accidentally or otherwise, and it reduces the noise your monitoring will eventually have to sort through. A program built on top of sprawling access entitlements will drown in false positives.
+
+## Build Visibility Around Data, Not People
+
+The framing matters more than people give it credit for. A program that watches *people* feels like surveillance. A program that tracks what happens to *sensitive data* — regardless of who touches it — is a data protection control that happens to also catch insider risk.
+
+Concretely: know where your sensitive data lives (customer records, financial data, source code, PHI or PII depending on your industry), and put controls in place that flag when it moves somewhere it shouldn't — to personal cloud storage, to removable media, to external email addresses, in unusually large volumes. Modern DLP and CASB tooling makes this far more tractable than it was even five years ago, and it lets you alert on the behavior that matters without reading anyone's email.
+
+This reframing isn't just a messaging exercise — it changes what you build. You end up monitoring data flows and access patterns instead of building employee dossiers, and that's a meaningfully different (and more legally defensible) posture.
+
+## Get Offboarding Right — It's Where Most Real Incidents Happen
+
+If you do nothing else, fix departure procedures. The window around an employee's exit — the weeks before a resignation is announced and the hours after it is — is where a disproportionate share of real insider incidents occur.
+
+A defensible offboarding process includes: access revocation that happens on the day of departure, not the following week; a review of what the departing employee accessed or exported in the weeks leading up to their exit, particularly for roles with access to competitive or sensitive information; and a documented handoff so access doesn't get quietly inherited by whoever picks up the work. None of this requires exotic tooling. It requires a checklist that's actually followed every time, for every departure — not just the ones that look risky in hindsight.
+
+## Make the Legal and HR Functions Co-Owners
+
+An insider threat program that security builds and runs alone is a liability waiting to surface. Bring HR and legal in from the start — not as reviewers at the end, but as co-owners of the policy, the escalation process, and the decision rights about what happens when something is flagged.
+
+This isn't just risk management for the program itself. It produces a better program: HR understands the behavioral context that makes an alert meaningful or not, and legal ensures your monitoring practices align with your jurisdiction's employment and privacy law before you've built something you have to unwind.
+
+## Communicate the Program — Don't Hide It
+
+Counterintuitively, the programs that generate the least cultural friction are the ones that are the most transparent about their existence. Tell employees, in plain language, what the company monitors, why, and what it doesn't do. "We monitor where sensitive customer data goes, not what's in your personal email" is a sentence that builds trust rather than eroding it — and it sets a baseline expectation that makes any future investigation far less fraught.
+
+Insider threat programs built in secret tend to surface in the worst possible way: during an investigation, in an exit interview, or in a lawsuit. Programs built in the open become part of how the company demonstrates it takes data protection seriously — to employees, customers, and auditors alike.
+
+## Start Small, Build Deliberately
+
+You don't need a dedicated insider threat team or an enterprise UEBA platform to start. You need an honest access review, a clear-eyed view of where your sensitive data lives, an offboarding checklist that actually gets followed, and HR and legal at the table. Build that foundation first. The tooling can come later — and when it does, it'll be pointed at the right problems instead of generating noise nobody acts on.
+
+Ready to build an insider risk program that protects your business without undermining your culture? [Schedule a free consultation with ProTechtive](/contact).
