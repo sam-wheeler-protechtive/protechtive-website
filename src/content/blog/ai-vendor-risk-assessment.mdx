@@ -1,0 +1,72 @@
+---
+title: "AI Vendor Risk: How to Assess the Security of the AI Tools Your Business Uses"
+date: "2026-06-22"
+excerpt: "AI tools now process your most sensitive data — often faster than your vendor review process can keep up. Here's a practical framework for AI vendor security assessments."
+tags: ["Vendor Risk", "AI Security", "Third-Party Risk", "Data Privacy"]
+author: "Sam Wheeler"
+---
+
+Every mid-market B2B company has AI tools in its stack now. Copilots, AI writing assistants, sales intelligence platforms, contract analysis tools, customer support bots. Most of them were adopted faster than the vendor risk process could keep up. The problem: AI tools process sensitive data differently than traditional SaaS — and the risk questions are different too.
+
+Standard vendor security questionnaires weren't designed with large language models in mind. The gap between what these tools are actually handling and what your security team has actually assessed is wider than most organizations realize.
+
+## Why AI Vendors Are Riskier Than Standard SaaS
+
+Traditional vendor risk assessment asks: where is my data stored, who has access, and what happens in a breach? Those questions still matter. But AI tools introduce risks that standard SaaS doesn't.
+
+**Training data exposure.** Does the vendor use your data to train or fine-tune their models? Many AI tools explicitly prohibit this — others carve out exceptions in their privacy policy language. The risk isn't only breach; it's your confidential information surfacing in responses to other customers.
+
+**Opaque subprocessor chains.** AI products typically sit on top of foundation models from OpenAI, Anthropic, Google, or open-source providers. Each layer adds a data processing relationship your vendor is responsible for but may not transparently disclose. When you submit data to an AI vendor, it may flow through two or three additional companies you've never assessed.
+
+**Rapid product iteration.** AI products change faster than enterprise software. New features often mean new data flows. A vendor that passed your security questionnaire six months ago may handle data materially differently today.
+
+## Tier Your AI Vendors by Data Exposure
+
+Apply the same tiering logic you'd use for any vendor, anchored to what data each tool can access:
+
+**Tier 1 (High-risk):** AI tools with access to sensitive customer data, PII, PHI, financial records, or intellectual property. These require a full assessment — not just accepting the vendor's standard security documentation.
+
+**Tier 2 (Moderate-risk):** Productivity AI tools operating on internal content (documents, emails, meeting transcripts) without access to regulated data. Standard questionnaire plus data processing agreement review.
+
+**Tier 3 (Lower-risk):** Tools where you're interacting only through a public UI without connecting internal systems or uploading business data. Contract review only.
+
+The catch: AI tools often start at Tier 3 and migrate toward Tier 1 as the organization integrates them more deeply. Build a re-tiering trigger into your annual vendor reviews.
+
+## What to Actually Assess for Tier 1 AI Vendors
+
+**Data handling and training.** Is your data used for model training or fine-tuning? If so, how is it isolated? Can you opt out? Get this in writing — privacy policy language is unilaterally changeable.
+
+**LLM provider chain.** What foundation model(s) does the product run on? What are the data processing terms between the vendor and those model providers? Do those providers have rights to use your data?
+
+**SOC 2 scope.** Does the vendor have a SOC 2 Type II? More importantly — does the scope explicitly include their AI features? Many enterprise SaaS vendors have SOC 2 for their core product but haven't brought newer AI capabilities into the audit scope. A report that predates the AI feature launch is not evidence of AI-specific controls.
+
+**Retention and deletion.** How long are your prompts and submitted data retained? Are they used for logging, debugging, or product improvement? Can you request deletion and verify it?
+
+**Incident notification.** Does their definition of "security incident" include scenarios where your data was used to train a model improperly — not just unauthorized access by a third party?
+
+## Red Flags
+
+These should trigger closer scrutiny or escalation before approval:
+
+- Privacy policies with broad rights to use customer data for "service improvement" without an enterprise carve-out
+- Unwillingness to sign a data processing agreement
+- SOC 2 report that predates the AI product launch by more than a year
+- Vague or evasive answers about which LLM providers process your data
+- No clear answer on training data use
+
+## Contract Protections That Standard DPAs Miss
+
+Standard data processing agreement language doesn't address AI-specific risks. When you negotiate with Tier 1 AI vendors, add:
+
+- Explicit prohibition on using your data for model training without written consent
+- Disclosure obligation if the vendor changes LLM providers or materially changes data flows
+- Incident notification that covers training data misuse, not only unauthorized access
+- Right to receive updated SOC 2 or equivalent documentation annually
+
+## Operationalizing This
+
+The goal isn't to block AI adoption — it's to make sure the business knows what data it's sharing and what the exposure is. In practice, this means a lightweight AI-specific addendum to your standard vendor review questionnaire, applied to any tool that processes business data, plus an annual re-review cadence given how quickly AI products evolve.
+
+The organizations that handle this well aren't slowing down AI adoption. They're ensuring that when something goes wrong with an AI vendor — and eventually something will — they know exactly what was exposed and what contractual recourse they have.
+
+Ready to close the gap between how fast AI gets adopted and how thoroughly it gets assessed? [Schedule a free consultation with ProTechtive](/contact) and we'll help you build a vendor risk process that keeps pace with your business.
