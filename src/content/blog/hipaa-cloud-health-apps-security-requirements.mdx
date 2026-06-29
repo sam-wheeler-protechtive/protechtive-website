@@ -1,0 +1,63 @@
+---
+title: "HIPAA Security Rule Requirements for Cloud-Based Health Apps"
+date: "2026-06-29"
+excerpt: "Cloud health SaaS companies inherit specific HIPAA Security Rule obligations the moment they handle ePHI. Here's what you actually need to implement."
+tags: ["HIPAA", "Cloud Security", "Healthcare Technology", "Compliance"]
+author: "Sam Wheeler"
+---
+
+Health tech SaaS companies inherit HIPAA obligations the moment they handle electronic protected health information (ePHI) on behalf of a covered entity. Most understand that at a high level. Fewer have a clear picture of which specific Security Rule requirements apply to them, what those requirements look like in a cloud-native architecture, and where the gaps tend to hide when the first enterprise customer asks for security documentation.
+
+## The Shared Responsibility Misconception
+
+Cloud health apps run on AWS, GCP, or Azure — and the major cloud providers will sign Business Associate Agreements and market themselves as HIPAA-eligible. That creates a dangerous assumption: if my cloud provider is "HIPAA compliant," doesn't that cover me?
+
+No. HIPAA uses a shared responsibility model. The cloud provider controls physical infrastructure security and the underlying managed services. Your organization is responsible for everything you build on top: your application code, your access controls, your encryption implementation, your audit logging, and your incident response procedures. A BAA with AWS doesn't cover any of that. It's a necessary precondition, not a compliance solution.
+
+## What the HIPAA Security Rule Actually Requires
+
+The Security Rule governs ePHI — any individually identifiable health information created, received, transmitted, or stored electronically. It organizes requirements into three safeguard categories.
+
+**Administrative Safeguards (§164.308)** are where cloud health companies most consistently underprepare. The rule requires a designated Security Officer, a documented and current risk analysis, written security policies, workforce training with records kept, formal access management procedures, and a contingency plan covering backup, disaster recovery, and emergency operations. For a cloud app, "documented risk analysis" means a real assessment of where ePHI flows through your system — not a templated document from a compliance vendor that doesn't reflect your actual architecture.
+
+**Physical Safeguards (§164.310)** in a cloud context primarily apply to endpoints. The cloud data center's physical controls are the provider's problem. Yours are workstation use policies, device encryption, screen lock enforcement, and policies governing remote access to production environments. Health tech startups frequently neglect this because they think "physical" doesn't apply to a cloud company. It does — just mostly to laptops and how staff access systems.
+
+**Technical Safeguards (§164.312)** are where the clearest obligations sit for cloud health apps:
+
+- *Unique user identification* — No shared accounts, ever. Every user who can access ePHI needs individual credentials and a complete audit trail tied to that identity.
+- *Automatic logoff* — Sessions must terminate after inactivity. Define the threshold and enforce it.
+- *Encryption* — ePHI must be encrypted at rest and in transit. The Security Rule technically labels this "addressable" rather than "required," which creates ambiguity that's not worth exploiting. Encrypt everything, document your implementation, and document any exceptions with explicit risk justification. Anything less won't hold up in an OCR audit or a breach notification scenario.
+- *Audit controls* — Log access to ePHI: who, what, when, from where. The logs need to be retrievable, tamper-evident, and reviewed. Logging without a review process doesn't satisfy the intent of the control.
+- *Transmission security* — TLS 1.2 minimum, 1.3 preferred, for all ePHI in transit. This includes internal service-to-service calls that carry ePHI, not only external-facing APIs.
+
+## The BAA Chain Problem
+
+A covered entity signs a BAA with your company. But have you traced the full chain of who else touches ePHI in your infrastructure?
+
+Every subcontractor or service provider that processes ePHI needs its own BAA with you. That typically includes your cloud provider (straightforward), your managed logging and monitoring platform if ePHI flows into it, your customer support tooling if support staff can view patient data, any AI or ML services that process ePHI, and your database provider if it's a managed service. This is where cloud health apps most commonly have compliance gaps: they have the AWS BAA signed but haven't mapped data flows thoroughly enough to know which third-party services are processing ePHI without a BAA in place.
+
+Map your ePHI data flows before you sign your next enterprise BAA. Surprises discovered during a customer security review are far worse than gaps discovered internally.
+
+## What a HIPAA-Ready Cloud Architecture Looks Like
+
+A few patterns that distinguish cloud health apps that are actually compliance-ready:
+
+**ePHI is scoped, not ambient.** Production ePHI is isolated to specific environments with tightly controlled, logged access. It doesn't flow into dev or test environments, general-purpose logging pipelines, or BI tools by default. If ePHI ends up in ten places because it's convenient, you have ten times the compliance surface to manage.
+
+**Encryption keys are managed separately from the data.** Customer-managed keys (CMK) using cloud KMS services rather than provider-managed default encryption. This matters especially for customers who will ask about key management in their vendor review.
+
+**Access is role-based and reviewed quarterly.** RBAC tied to job function, with periodic access reviews that produce documented records. No standing access to production ePHI for anyone who doesn't need it operationally — including engineers.
+
+**Audit logs are immutable and retained.** HIPAA documentation retention is six years. Apply the same lens to access logs.
+
+**Breach response procedures are tested, not theoretical.** The Breach Notification Rule requires notifying affected individuals within 60 days of discovering a breach. If your team has never walked through what "discover a breach" looks like operationally — how you'd detect it, who decides what's reportable, who makes the notifications — you're not ready for the scenario that will eventually happen.
+
+## Where to Start
+
+If you're a health tech company preparing for HIPAA compliance, or preparing for the enterprise sales process that will require it, start with a risk analysis scoped to ePHI data flows. Map where ePHI enters your system, where it's stored, how it's processed, and where it exits. Identify the controls in place at each step and the gaps. Build your remediation roadmap from that map.
+
+That risk analysis is also explicitly required by the Security Rule — so running it satisfies both the compliance obligation and the security planning objective simultaneously.
+
+---
+
+Ready to get your cloud health app to a defensible HIPAA compliance posture? [Schedule a free consultation with ProTechtive](/contact) and we'll help you build a program that holds up to enterprise scrutiny.
