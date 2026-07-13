@@ -1,0 +1,88 @@
+---
+title: "Data Breach Notification Requirements: What You're Legally Required to Do and When"
+date: "2026-07-13"
+excerpt: "Data breach notification requirements vary by state, sector, and contract. Here's what B2B companies must know before an incident forces the question."
+tags: ["Incident Response", "Compliance", "Data Breach", "Legal Requirements"]
+author: "Sam Wheeler"
+---
+
+Most companies find out what their breach notification obligations actually are the hard way — during an incident, under time pressure, with outside counsel billing by the hour.
+
+That's the wrong time to learn that your state requires individual notification within 30 days, that your health IT customer contract requires notification within 72 hours, and that you may owe a report to a federal regulator you've never interacted with before. These obligations don't coordinate with each other. The most restrictive one wins, and you're on the hook for all of them simultaneously.
+
+This post covers what mid-market B2B companies actually need to know before they need to know it.
+
+## The Patchwork Problem
+
+The United States has no single federal breach notification law that applies universally. What exists instead is a patchwork of state laws, sector-specific federal regulations, and contractual obligations that can overlap, conflict, and stack on top of each other.
+
+At minimum, you're subject to the breach notification law of every state where affected individuals reside — not where your company is headquartered. If you have customers or employees in California, Texas, and New York, you're subject to three different state notification frameworks simultaneously.
+
+On top of state law:
+
+- **HIPAA** requires notification to affected individuals within 60 days of discovery, with additional requirements for breaches affecting 500 or more individuals in a single state (which triggers media notification) and 500 or more total (which triggers HHS notification on a much shorter timeline).
+- **SEC regulations** require public companies to disclose material cybersecurity incidents within four business days of determining materiality.
+- **FTC Safeguards Rule** requires financial institutions to notify the FTC within 30 days of discovering a breach affecting 500 or more customers.
+- **GLBA** adds notification requirements for financial services companies.
+- **State attorneys general** in some states require notification independent of individual notification.
+
+And that's before you open your enterprise customer contracts and look at what you agreed to there.
+
+## What Triggers Notification
+
+Every notification law has a threshold — not every security incident requires notification. The typical trigger is: **unauthorized acquisition of personal information that compromises the security, confidentiality, or integrity of the data**.
+
+Key variables:
+
+**What counts as personal information.** Most state laws define this as name plus one or more of: Social Security number, financial account number, driver's license number, medical information, or login credentials. Some states (California, New York) have significantly expanded definitions that include biometric data, precise geolocation, and health insurance information.
+
+**Harm-based vs. risk-based triggers.** Some states require notification only if the breach is likely to cause harm to individuals. Others require notification any time covered data is accessed without authorization, regardless of whether harm is likely. This distinction matters — an honest assessment of harm likelihood can be relevant in some jurisdictions and irrelevant in others.
+
+**Encryption safe harbors.** Most state laws provide an exemption if the breached data was encrypted in a way that rendered it unreadable to the unauthorized party. This safe harbor doesn't apply if the encryption keys were also compromised.
+
+## What Notification Must Actually Say
+
+Generic notifications accelerate regulatory scrutiny and erode customer trust. Most state laws specify minimum required content:
+
+- Description of what happened and when it was discovered
+- Types of personal information involved
+- What the company has done or is doing to contain the incident
+- What steps affected individuals should take to protect themselves
+- Contact information for questions
+
+Federal regulations often add to this list. HIPAA notification letters have specific required elements and must be written in plain language accessible to individuals with limited health literacy.
+
+## Your Contractual Obligations May Be Stricter Than Your Legal Ones
+
+B2B companies routinely sign enterprise contracts that impose notification obligations stricter than any law requires. Common contractual terms:
+
+- 24-hour or 48-hour notification windows (far shorter than most legal requirements)
+- Mandatory notification of a named individual at the customer (CISO, legal counsel) regardless of whether the breach involves their data
+- Required incident response documentation and post-incident reporting
+- Customer audit rights following an incident
+
+These provisions are enforceable. A customer who discovers you sat on a breach for ten days because "the law allows 30" is unlikely to renew — and may have grounds for a breach of contract claim.
+
+Before your next incident, pull your top 10 customer contracts and look at the security incident notification clauses. The shortest window in any contract is effectively your operational deadline.
+
+## The Clock Problem
+
+Notification deadlines don't start when you're certain you've had a breach. They typically start when you **discover** a breach or a **reasonable basis to believe** one has occurred.
+
+In practice, this means the clock starts when your security team identifies an anomaly they believe may be a breach — not when forensic analysis confirms the scope. The 72-hour window under GDPR (for companies with EU data subjects) starts at initial discovery, not at the end of a forensic investigation that might take weeks.
+
+This is why incident response plans matter. A plan that specifies escalation timelines, who makes the "is this a reportable breach?" determination, and when legal counsel gets involved turns a chaotic situation into a manageable one. Without that plan, every hour spent figuring out process is an hour burning down your notification window.
+
+## What to Do Before the Incident
+
+Three things that will matter when you actually need them:
+
+**Know what data you have and where it lives.** You can't assess notification obligations without knowing what personal information you hold, in what systems, and for which individuals. Organizations that can't answer this spend the first 48 hours of an incident doing a data inventory instead of investigating the incident.
+
+**Map your notification obligations now.** Legal counsel familiar with data privacy should review your notification obligations across all applicable state laws, federal regulations, and customer contracts. Document the result. The output is a one-page chart your incident response team can reference without re-litigating the legal analysis in the middle of an incident.
+
+**Draft notification templates.** Notification letters written under time pressure read like they were written under time pressure. Templated drafts for the most likely breach scenarios — credential compromise, phishing leading to data access, ransomware — give you a starting point that's already been reviewed by counsel.
+
+---
+
+Ready to make sure your incident response plan covers notification obligations before they catch you off-guard? [Schedule a free consultation with ProTechtive](/contact) — we help mid-market companies build breach response playbooks that are legally defensible and operationally executable.
