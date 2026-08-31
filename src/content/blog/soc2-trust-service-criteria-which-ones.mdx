@@ -1,0 +1,61 @@
+---
+title: "SOC 2 Trust Service Criteria: Which Ones Does Your SaaS Company Actually Need?"
+date: "2026-08-31"
+excerpt: "Choosing the wrong SOC 2 Trust Service Criteria adds cost and audit burden without helping enterprise buyers. Here's how to scope your report correctly."
+tags: ["SOC 2", "Compliance", "SaaS Security", "Audit Readiness", "Trust Service Criteria"]
+author: "Sam Wheeler"
+---
+
+Every SOC 2 audit covers the same five potential areas: Security, Availability, Processing Integrity, Confidentiality, and Privacy. But "potential" is the operative word. Only Security — the Common Criteria — is required. The other four are optional, and which ones you include has a real effect on your audit scope, your cost, and what enterprise buyers actually see in your report.
+
+I see two opposite mistakes in companies preparing for SOC 2. Some scope too narrowly and get pushback from customers who expected more. Most scope too broadly — adding every TSC "just to look thorough" — and end up with a longer, more expensive audit without any corresponding sales benefit. Getting this right before you engage an auditor saves months and money.
+
+## Security (Common Criteria): Non-Negotiable
+
+Every SOC 2 report includes the Security criteria — also called the Common Criteria (CC). The 17 CC categories cover what most people associate with sound security practice: logical access controls, change management, system monitoring, risk management, vendor oversight, and incident response.
+
+The Common Criteria are where auditors spend the majority of their time, and where most organizations have the most remediation work to do. Before you consider adding additional TSCs, make sure your Common Criteria controls are actually operating. A SOC 2 report with Security plus three additional TSCs that's riddled with exceptions is worse for your sales cycle than a clean Security-only report.
+
+## Availability: Add This for Most SaaS Products
+
+Availability covers whether your systems are operational and available as you've committed to customers — uptime monitoring, redundancy, backup and recovery, and incident notification processes.
+
+Add Availability if your customers depend on your platform to operate their own business and you've made any uptime commitments in your contracts. This includes virtually every SaaS product in fintech, HR, supply chain, healthcare operations, or any vertical where downtime creates downstream business disruption. Enterprise buyers who are evaluating infrastructure dependency will expect it.
+
+If your product is a low-criticality tool with no formal SLAs and customers wouldn't notice outages immediately, you can leave it out. But for most B2B SaaS companies, Security + Availability is the right starting point.
+
+## Confidentiality: Add It If You Handle Sensitive Business Data
+
+The Confidentiality criterion addresses how you protect information that's subject to confidentiality obligations — data covered by NDA, sensitive business data your customers share with you, trade secrets, financial information, or anything classified as confidential in your contracts.
+
+Add Confidentiality if your product processes strategic business information — financial data, legal documents, internal communications, employee records, M&A materials. It's particularly relevant for companies selling into legal, financial services, executive communications, or any vertical where "confidential" isn't just a contract term but a core service expectation.
+
+If your product handles only operational or process data with no particular confidentiality sensitivity, you can skip it. But when in doubt, check what language appears in your customer contracts around data handling. If customers are calling their data "confidential" in the terms they send you, that signals what they'll look for in your audit.
+
+## Processing Integrity: The Least-Needed Criterion
+
+Processing Integrity covers whether your system processes data completely, accurately, and on schedule — essentially, whether calculations and operations produce correct results without unauthorized modification.
+
+This criterion matters for systems where data accuracy is the core value proposition: billing platforms, financial calculation engines, insurance rating systems, order management. If your product tells a customer how much they owe, what their risk score is, or whether an order is fulfilled correctly, Processing Integrity belongs in scope.
+
+For most SaaS companies, the answer is no. A project management tool, a CRM, a document platform, a collaboration app — none of these have a strong rationale for Processing Integrity. Don't add it because it sounds responsible. Add it if your product makes material claims about data accuracy that enterprise buyers will audit.
+
+## Privacy: Narrower Than You Think
+
+Privacy covers how you collect, use, retain, and dispose of personal information, and maps to frameworks like the AICPA's privacy principles derived from GDPR and US state privacy laws.
+
+This criterion is relevant if your product is the primary processor of consumer personal data — health apps, consumer fintech, identity platforms — or if your customers include you in their own privacy compliance obligations. It's less relevant for pure B2B products where end users are employees rather than consumers.
+
+A common mistake: adding Privacy because your product stores user data. Almost every SaaS product stores some user data. That doesn't automatically trigger Privacy. The question is whether handling personal data is the service, not a byproduct of it. If a HIPAA Business Associate Agreement or a GDPR data processing addendum is routine in your sales cycle, Privacy is worth considering. If those are edge cases, it probably isn't.
+
+## Making the Decision
+
+Start with Security. Add Availability if customers depend on your uptime. Add Confidentiality if you're explicitly handling sensitive business data. Add Processing Integrity only if data calculation accuracy is your core value proposition. Add Privacy only if consumer personal data is the service.
+
+The most defensible scoping decision is the one grounded in what your customers actually care about — not what makes the report look more impressive. A focused, clean SOC 2 report on the right criteria is more compelling than a sprawling one with findings across five TSCs.
+
+Before you finalize scope, talk to a few enterprise customers or prospects. Ask them what their security questionnaires focus on. Their answers will tell you exactly what to include.
+
+---
+
+Ready to scope your SOC 2 correctly and build a program that actually gets you to a clean report? [Schedule a free consultation with ProTechtive](/contact) and we'll walk through your specific environment, your customer profile, and the right TSC selection for your audit.
