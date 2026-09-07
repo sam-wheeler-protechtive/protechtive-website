@@ -1,0 +1,69 @@
+---
+title: "Ransomware Incident Response: A Step-by-Step Playbook for Mid-Market Companies"
+date: "2026-09-07"
+excerpt: "When ransomware hits, every minute counts. Here's the step-by-step incident response playbook mid-market companies need before an attack happens."
+tags: ["Incident Response", "Ransomware", "Security Operations", "Mid-Market", "Business Continuity"]
+author: "Sam Wheeler"
+---
+
+Ransomware is the incident scenario most mid-market organizations are least prepared for — not because they don't know the threat exists, but because building a credible response plan feels overwhelming without dedicated security staff. The result: when it happens, response is improvised.
+
+Improvised ransomware response is expensive. Organizations that activate a practiced, documented playbook within the first two hours consistently contain damage faster, recover faster, and lose less data than those making decisions in real time. The organizations paying seven-figure ransoms are usually the ones without a plan.
+
+This is the playbook.
+
+## Before an Attack: What Needs to Be in Place
+
+A plan you've never tested is a hypothesis. Before we get to the response sequence, three things need to exist:
+
+**Offline backups with verified restoration.** Ransomware operators specifically target backup systems — they look for backup servers, cloud backup credentials, and network-attached storage and encrypt or delete them first. Backups stored on domain-joined systems or with credentials that exist anywhere in your environment will be encrypted alongside everything else. Air-gapped or offline backups, tested with actual restoration drills, are the difference between paying a ransom and not paying one.
+
+**A documented asset inventory.** When you're in the middle of an attack, you need to know what systems exist, what the business impact of each one is, and which ones touch regulated data. If that information doesn't exist before the incident, you'll waste critical time answering questions that should be pre-answered.
+
+**An out-of-band contact list.** When your email server is encrypted, you can't use it to coordinate response. You need phone numbers and personal email addresses for your core response team, outside legal counsel, your cyber insurance carrier, and your IR firm — stored somewhere outside the systems that might be offline.
+
+## The First Two Hours: Contain Before You Investigate
+
+Ransomware actors understand that time favors them. They often maintain access for weeks before triggering the encryption payload, and they may still be active when encryption starts. The immediate priority is containment, not investigation.
+
+**Isolate affected systems from the network.** Disconnect encrypted machines by unplugging the cable or disabling the network adapter — don't simply shut them down. Shutdown preserves ransomware in memory that forensics will need; isolation stops lateral movement without destroying artifacts.
+
+**Do not restart encrypted systems.** It's instinctive to reboot a machine that's behaving strangely. For ransomware, this often destroys forensic evidence and can trigger additional encryption stages.
+
+**Call your cyber insurance carrier immediately.** Before you engage an IR firm on your own, call your carrier. Most policies require notification within 24–72 hours, and your carrier has pre-approved vendor relationships. Engaging a firm outside that network can jeopardize coverage.
+
+**Preserve logs while you still can.** If your IT or security staff can safely collect logs from firewalls, your identity provider, and any EDR tooling before those systems are affected, do it. Preserved logs accelerate forensic investigation significantly.
+
+## Scope Assessment: How Bad Is It?
+
+Once spread is contained, the investigation phase begins. Your IR firm leads this work. The questions that need answers before any restoration begins:
+
+- What was the initial access vector? (Exposed RDP? Phishing credential theft? Unpatched VPN?)
+- How long did the attacker have access before executing the payload?
+- What data was accessed or exfiltrated?
+- Which systems are confirmed affected versus potentially affected versus clean?
+
+Don't begin restoration until the scope is clear and the attack path is understood. Restoring systems onto a network that still has attacker persistence means getting re-encrypted. This is the step most organizations rush, and it routinely doubles recovery time.
+
+## The Recovery Decision
+
+The recovery question is ultimately a business calculation: Can you restore from backup without paying? How long will that take? What's the operational cost of that timeline?
+
+Organizations with tested, offline backups and a clear restoration runbook typically have a straightforward answer. The calculation becomes harder when backup integrity is uncertain, restoration would take weeks, or the attacker claims to have exfiltrated sensitive data and is threatening public disclosure.
+
+Paying the ransom is a data retrieval option, not a recovery strategy. It comes with no guarantees — decryptors fail, additional ransom demands follow, and most organizations that pay still spend weeks rebuilding systems. Legal counsel and your IR firm need to advise this decision, not just the technical team.
+
+## After Recovery: Closing the Door
+
+Every ransomware incident is a case study in what your security program allowed. Post-incident work is where you ensure it doesn't happen again:
+
+- Close the initial access vector — patch the vulnerability, enforce MFA on the exposed service, disable unnecessary remote access
+- Audit and rotate all credentials, assuming everything is compromised until proven otherwise
+- Review backup architecture against ransomware-specific attack patterns and address gaps
+- Conduct a formal post-incident review with a written lessons-learned report reviewed by leadership
+
+Organizations that treat containment and recovery as the finish line get hit again. The ransomware business model depends on it.
+
+---
+
+The best time to build a ransomware response playbook is before you need it. [Schedule a free consultation with ProTechtive](/contact) — we'll assess your incident response readiness and help you build a plan your team can execute under pressure.
