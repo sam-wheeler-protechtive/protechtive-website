@@ -1,0 +1,93 @@
+---
+title: "When Your Vendor Gets Breached: A Practical Response Playbook"
+date: "2026-09-28"
+excerpt: "Third-party breaches are inevitable. Here's the vendor breach response playbook every mid-market company needs — before the breach notice arrives."
+tags: ["Vendor Risk", "Incident Response", "Third-Party Risk", "Supply Chain Security"]
+author: "Sam Wheeler"
+---
+
+The breach notice arrives on a Tuesday morning. A vendor you've used for years — your document management platform, your HR system, your logistics partner — emails to say they've experienced a security incident and your data may have been affected. What do you do in the next four hours?
+
+If the honest answer is "figure it out as we go," you're not alone. Most mid-market companies have invested in vendor *selection* — due diligence checklists, SOC 2 reviews, security questionnaires — but almost none have a documented process for what happens when a vendor they already trust gets compromised.
+
+This playbook doesn't require a security team. It requires thinking through the problem before it happens.
+
+## Why Third-Party Breaches Deserve Their Own Playbook
+
+Vendor breaches differ from direct breaches in important ways that affect how you respond:
+
+**You don't control the investigation.** You're dependent on the breached vendor for information about what happened, what data was affected, and when. Their timeline and disclosure quality drive yours.
+
+**Your legal clock may already be running.** Depending on your industry and jurisdiction, notification obligations can trigger on the discovery of a breach — even a third-party breach. If a vendor that processes health data is breached, HIPAA's 60-day breach notification clock starts at the point you have knowledge of the breach, not when the vendor tells you. For customers whose data was in that system, *you* may owe notification.
+
+**Your exposure depends on context you need to assemble quickly.** What data did that vendor have? What systems did they connect to? What access did they hold? This information lives in your vendor inventory — if you have one.
+
+## Step 1: Contain Your Exposure
+
+The moment a vendor notifies you (or you learn of an incident from news or a security alert service), your first move is to reduce your exposure:
+
+**Revoke or suspend the vendor's access to your systems.** If the vendor has an active integration, API key, or VPN access into your environment, suspend it immediately. A vendor breach that's ongoing can be a vector into your systems. Don't wait for confirmation of scope before taking this step — access can be restored once the situation is clearer.
+
+**Rotate any shared credentials.** If the vendor has any knowledge of your credentials — API keys they use to call your systems, shared passwords in any integration — rotate those now. Assume the vendor's credential store is compromised until proven otherwise.
+
+**Preserve your own logs.** Pull authentication logs, API call logs, and any activity records showing what the vendor's access looked like in the days before and after the incident window the vendor describes.
+
+## Step 2: Understand Your Data Exposure
+
+This is where your vendor inventory pays off or doesn't. Within the first few hours, you need to know:
+
+- What categories of data did this vendor hold? (PII, PHI, financial data, intellectual property?)
+- Whose data was it? (employees, customers, business partners?)
+- What volume are we talking about?
+- Was the data encrypted at rest, and did the vendor hold the keys?
+
+If this information isn't in a vendor inventory, you're calling through contracts, emailing vendor contacts, and digging through procurement records under pressure. Build the inventory before you need it.
+
+## Step 3: Evaluate Your Notification Obligations
+
+This step requires legal input, but the security team needs to frame the question clearly. The key questions:
+
+**Do you have regulatory notification obligations?** HIPAA, state breach notification laws, GDPR, and sector-specific regulations (GLBA, NYDFS) all have different triggers and timelines. Whether a vendor breach triggers your obligations depends on what data the vendor held and whether that data was compromised.
+
+**Do you have contractual notification obligations?** Enterprise customer contracts often include breach notification clauses — typically 24–72 hours from discovery — that cover incidents affecting customer data regardless of whether the breach was direct or through a vendor.
+
+**What does your cyber insurance policy require?** Most policies require prompt notification of potential claims. A significant vendor breach affecting your customer data is a potential claim. Notify your broker early, before you know the full scope.
+
+## Step 4: Maintain a Decision Log
+
+Every organization responds to third-party incidents better with a contemporaneous record: what you knew, when you knew it, what decisions you made, and who made them. This matters for:
+
+- Regulatory review (demonstrating reasonable and timely response)
+- Insurance claims (establishing timeline and good faith)
+- Customer communications (being able to answer "when did you know?" credibly)
+- Internal post-incident review (what would we do differently?)
+
+A shared document or incident tracking tool works. The format matters less than the habit.
+
+## Step 5: Communicate Appropriately
+
+There are at least three audiences for vendor breach communications, and conflating them is where companies make mistakes:
+
+**Customers and partners** whose data may have been affected need clear, honest, timely communication. Understatement and hedged language erodes trust faster than the breach itself. If you don't have full information yet, say so and commit to a follow-up timeline.
+
+**Your own leadership** needs to know about material incidents. The CEO and general counsel should hear about significant vendor breaches from the security team, not from a customer calling in.
+
+**The vendor** needs to hear your specific questions and expectations clearly. What data was affected? When did the incident occur? When was it detected? What's the remediation timeline? What independent validation is available? You're entitled to straight answers.
+
+## The Prevention Side: Before the Next Breach Notice
+
+The response playbook works better when the foundation is in place:
+
+**Vendor inventory with data classification.** For every vendor: what data they hold, whose it is, and how sensitive it is. This takes a day to build for most mid-market companies and is the single most useful input to every step above.
+
+**Vendor contract security clauses.** Breach notification timelines (require 24–48 hours), right-to-audit, security requirements as a contract condition, and data processing agreements that clearly define permitted uses. These don't prevent breaches, but they set your rights and the vendor's obligations clearly.
+
+**Tiered monitoring for critical vendors.** For vendors with access to your most sensitive systems or data, continuous monitoring through a service like BitSight or SecurityScorecard gives you an independent signal of their security posture — sometimes before they notify you of a problem.
+
+**Tabletop exercise with a third-party scenario.** Walking through a vendor breach scenario with your leadership team and legal counsel — even informally — surfaces the gaps in your process before you're under pressure. Where's the vendor inventory? Who makes the access revocation decision? Who calls the insurance broker?
+
+---
+
+Vendor breaches are a permanent feature of the threat landscape. Supply chain attacks through trusted third parties have become one of the primary vectors for reaching organizations that have improved their own direct defenses. A well-run vendor risk program includes a response plan — not just a selection process.
+
+Ready to build a vendor risk management program that includes both assessment and response capability? [Schedule a free consultation with ProTechtive](/contact) — we'll help you close the gaps before you need them.
