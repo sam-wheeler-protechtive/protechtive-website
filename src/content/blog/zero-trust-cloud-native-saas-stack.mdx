@@ -1,0 +1,49 @@
+---
+title: "Zero Trust for Cloud-Native Businesses: Securing Your SaaS Stack Without a Data Center"
+date: "2026-10-19"
+excerpt: "Zero trust architecture for cloud-native businesses that run entirely on SaaS — what it means when you have no data center to protect and how to implement it."
+tags: ["Zero Trust", "Cloud Security", "SaaS Security", "Identity Security"]
+author: "Sam Wheeler"
+---
+
+Most zero trust content is written for enterprises with data centers, internal networks, and legacy on-premises applications. The advice — segment your network, put your apps behind a zero trust network access proxy, enforce micro-segmentation — is sound, but it doesn't map cleanly to a company that runs entirely in the cloud.
+
+If your business runs on Salesforce, Google Workspace, AWS, Slack, and a dozen other SaaS applications, you don't have an internal network to segment. You don't have an on-prem file server to protect. You may not even have a corporate office. The perimeter you're trying to eliminate with zero trust may not have existed in the first place.
+
+That's actually good news. It means you don't have legacy architecture to fight. But zero trust still applies — it just looks different.
+
+## What Zero Trust Actually Means Without Infrastructure
+
+Zero trust is a security model built on one principle: never trust, always verify. Every access request — whether it comes from inside your corporate network or from a coffee shop in Prague — is treated the same. Identity, device health, and context are verified before granting access.
+
+For a cloud-native company, the practical implementation is almost entirely about identity and device management rather than network controls.
+
+**Identity is the perimeter.** When all your applications are SaaS, the credential is the key to the kingdom. A compromised Google Workspace account is functionally equivalent to physical access to everything stored there. Identity security is zero trust for cloud-native businesses.
+
+**Device trust fills the role that network location used to play.** In traditional networks, being "on the network" implied some level of trust. Cloud-native businesses need a different signal. Managed device status — whether a device is enrolled in MDM, has current patches, has disk encryption enabled — provides that signal. Access from an unmanaged device should be restricted or blocked, even for a valid user with valid credentials.
+
+## The Controls That Matter
+
+**Single Sign-On (SSO) across all SaaS applications.** Centralize authentication. If users have 15 different passwords for 15 different SaaS tools, you have 15 separate attack surfaces, no visibility into login activity across your stack, and no ability to immediately cut access when an employee leaves. SSO with an identity provider (Okta, Microsoft Entra, Google Identity) is the foundation.
+
+**Phishing-resistant MFA everywhere.** TOTP-based MFA (Google Authenticator, Authy) is better than SMS, but it's phishable — attackers can harvest the one-time code with a convincing fake login page. Passkeys or hardware security keys (FIDO2/WebAuthn) are not. Require phishing-resistant MFA for everything that supports it, and especially for any application that stores financial, customer, or sensitive data.
+
+**Conditional access policies.** Modern identity platforms let you define the conditions under which access is granted. Require managed devices for access to sensitive applications. Block access from countries you don't operate in. Require re-authentication after periods of inactivity. These policies turn your identity provider into an enforcement point, not just an authentication service.
+
+**SaaS access control and over-permissioning.** The average company using Google Workspace or Microsoft 365 has significant over-permissioning: former employees with active accounts, service accounts with admin rights they don't need, users with edit access to documents they only need to read. Audit permissions regularly. Revoke access that's no longer needed. Apply least-privilege even to SaaS.
+
+**Shadow IT visibility.** Cloud-native companies often have significant SaaS sprawl — applications that individuals or teams have adopted without IT involvement. These apps may store sensitive business data outside the controls your managed environment provides. A CASB or identity provider integration that surfaces OAuth app grants gives you visibility into what your employees are connecting to your managed accounts.
+
+## The Gaps to Watch
+
+Even rigorous identity security has limits. OAuth app grants — the "sign in with Google" or "allow this app to access your Gmail" flows — can give third-party apps persistent access to your data outside your SSO controls. Audit OAuth grants in your identity provider and revoke anything that isn't actively used or isn't from a known vendor.
+
+Data in SaaS applications is also harder to classify and protect than data in systems you control. When sensitive customer data lives in five different SaaS tools, DLP enforcement is piecemeal. Understanding where your sensitive data lives in your SaaS stack is a prerequisite for protecting it.
+
+## Zero Trust Is Still the Right Model
+
+The core principle holds regardless of infrastructure: every access request should be verified, not assumed safe. For cloud-native companies, that means investing heavily in identity, managing device trust, and auditing SaaS permissions with the same rigor that traditional organizations apply to network access.
+
+The good news is that you're not rearchitecting a 20-year-old network. You're building the right controls for the environment you actually have.
+
+Ready to assess your cloud-native security posture and build the identity and access controls that zero trust requires? [Schedule a free consultation with ProTechtive](/contact).
