@@ -1,0 +1,73 @@
+---
+title: "Building a Security Policy Library That Auditors Actually Accept"
+date: "2026-10-26"
+excerpt: "Most companies have security policies. Few have ones that satisfy SOC 2, HIPAA, or NIST CSF auditors. Here's which policies you need and how to build ones that hold up."
+tags: ["Compliance", "SOC 2", "Security Program", "HIPAA", "NIST CSF", "Governance"]
+author: "Sam Wheeler"
+---
+
+When companies first start building a security program, policies are often the last thing they want to think about. They feel bureaucratic — a checkbox exercise that produces documents nobody reads. Then an auditor asks for them, a prospect's security questionnaire demands them, or cyber insurance renewal requires evidence they exist. Suddenly the policy library that was supposed to happen eventually becomes urgent.
+
+The problem isn't that most companies lack policies. It's that most companies have *bad* policies: downloaded templates from the internet, never customized, never reviewed, never enforced. Those don't satisfy a SOC 2 auditor. They don't meet HIPAA requirements. And they don't provide any actual security value.
+
+Here's how to build a policy library that works.
+
+## What Auditors Are Actually Looking For
+
+Policies serve two distinct purposes: they communicate expectations to employees, and they provide auditors with documented evidence of your control environment. A policy that does neither is worse than useless — it creates liability by documenting a standard you're not meeting.
+
+When auditors review policies, they check three things:
+
+1. **Completeness** — does the policy address the required topics for the framework under review?
+2. **Accuracy** — does the policy reflect what you actually do? A policy claiming monthly access reviews that happen quarterly is a finding.
+3. **Currency** — has the policy been reviewed within the required timeframe? SOC 2 expects annual review cycles.
+
+Generic templates fail on accuracy, almost by definition. A policy template that describes a generic "patch management process" isn't describing your patch management process. When the auditor asks for evidence that the process in the policy is being followed, you have a problem.
+
+## The Core Policy Set
+
+Every mid-market company pursuing SOC 2, HIPAA, or NIST CSF compliance needs a set of foundational policies. This isn't an exhaustive list, but it's the core:
+
+**Information Security Policy** — The master document establishing your security program's scope, objectives, and governance structure. References your other policies. Required by virtually every framework.
+
+**Acceptable Use Policy** — What employees can and can't do with company systems, data, and networks. One of the first policies auditors request and one most companies already have — usually in outdated form.
+
+**Access Control Policy** — How access is provisioned, reviewed, and revoked. Must match your actual processes: if you do quarterly access reviews, the policy says quarterly.
+
+**Data Classification and Handling Policy** — How you categorize sensitive data and what protections apply to each category. Required for HIPAA (defines PHI handling) and foundational for SOC 2 confidentiality criteria.
+
+**Incident Response Policy** — How you detect, respond to, and recover from security incidents. Must include notification requirements if you handle regulated data.
+
+**Change Management Policy** — How changes to systems and infrastructure are reviewed, approved, and deployed. SOC 2 change management controls depend on this existing and being followed.
+
+**Vulnerability Management Policy** — How vulnerabilities are identified, prioritized, and remediated. Should define your SLAs (critical vulnerabilities remediated within X days) and reflect what you actually achieve.
+
+**Business Continuity and Disaster Recovery Policy** — Your RPO/RTO commitments, backup requirements, and recovery testing cadence.
+
+**Third-Party Risk Management Policy** — How you assess and monitor vendors with access to your systems or data. Required for SOC 2 vendor management controls and HIPAA Business Associate management.
+
+## The Customization Problem
+
+The reason template policies fail audits is that they describe a generic company, not your company. Every policy that references a process needs to describe *your* process.
+
+Before writing any policy, document how the control actually operates today — even if the answer is "inconsistently." Then write the policy to reflect a realistic, achievable standard. If your current state doesn't match the required standard, the policy becomes a gap analysis: here's where we are, here's the process we're building toward, here's the timeline.
+
+This honesty matters. An auditor who finds a gap between your stated policy and your actual operation is noting a finding. An auditor who sees a policy with a documented improvement plan is evaluating your risk management maturity.
+
+## Review Cycles and Ownership
+
+Policies don't maintain themselves. Assign an owner to each policy — the person accountable for its accuracy and for driving the annual review. For most mid-market companies, this means distributing ownership: HR owns the Acceptable Use Policy, IT owns Access Control and Patch Management, Legal or the CISO owns the master Information Security Policy.
+
+Set calendar reminders. Build the annual review into your SOC 2 or compliance calendar. When the review happens, document it: who reviewed, what changed, who approved. That documentation is what auditors want to see.
+
+## How Policies Connect to Your Compliance Program
+
+Policies aren't compliance by themselves — they're the documented foundation your controls sit on. Every SOC 2 control points back to a policy that defines the requirement. Every HIPAA control maps to a policy that specifies how you meet the rule. NIST CSF treats policy documentation as a core element of program maturity.
+
+Organizations that build accurate, maintained policy libraries find compliance audits significantly smoother. The evidence collection is easier because the controls are clearly defined. The gap identification is faster because there's a documented standard to measure against.
+
+More importantly, a good policy library communicates professionalism to enterprise prospects. When a security questionnaire asks "do you have a documented information security policy?" the answer shouldn't be "we think so."
+
+---
+
+Ready to build a compliance-ready policy library for your organization? [Schedule a free consultation with ProTechtive](/contact) — we'll assess your current policy coverage, identify the gaps, and build a program designed for your specific compliance requirements.
