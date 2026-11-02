@@ -1,0 +1,61 @@
+---
+title: "CIS Controls v8: A Practical Implementation Guide for Mid-Market Businesses"
+date: "2026-11-02"
+excerpt: "The CIS Critical Security Controls offer a prescriptive, prioritized path to a defensible security baseline — built specifically for organizations that need to know where to start."
+tags: ["CIS Controls", "Security Program", "Mid-Market", "Security Framework", "Cybersecurity Baseline"]
+author: "Sam Wheeler"
+---
+
+When companies decide to build a real security program, the first question is usually: which framework? The answer most consultants give is NIST Cybersecurity Framework. That's not wrong — NIST CSF is the right model for mature programs and board-level communication. But for a company with no security team, a limited budget, and a real backlog of things that need to get done, the NIST CSF has a problem: it tells you what categories of security matter, not what to actually do.
+
+The CIS Critical Security Controls are different. They're a numbered list of specific, prioritized actions. You can open the document and start working your way through it. That tractability makes them the better starting point for organizations building a security baseline from scratch.
+
+## What the CIS Controls Are
+
+The CIS Controls v8 (published by the Center for Internet Security) is a set of 18 control families covering the foundational actions required to defend against the most common attack techniques. Each control family contains specific Safeguards — 153 total — that describe exactly what to implement.
+
+The controls are organized around how attackers actually operate. They reflect analysis of real breach data and prioritize the defenses that prevent the most common intrusion methods: compromised credentials, unpatched vulnerabilities, phishing, and exploitation of internet-facing systems.
+
+## Three Implementation Groups: Start Where You Are
+
+The most useful feature of CIS Controls v8 is the Implementation Group (IG) model. Every Safeguard is tagged to one or more implementation groups:
+
+**IG1** is "essential cyber hygiene" — the 56 Safeguards that every organization should have in place regardless of size, industry, or budget. If you do nothing else, do IG1.
+
+**IG2** adds 74 Safeguards for organizations managing sensitive data, operating in regulated industries, or serving enterprise customers who will ask about your security program. SOC 2, HIPAA, and cyber insurance requirements map heavily to IG2.
+
+**IG3** adds the remaining 23 Safeguards for organizations with dedicated security staff and formal security operations — think security operations centers, red team programs, and continuous threat intelligence. Most mid-market companies don't need IG3.
+
+## IG1: The Minimum Every Business Should Have
+
+IG1 is not a low bar. For a company that hasn't systematically addressed security, getting to full IG1 coverage represents meaningful work. The 56 Safeguards span six core areas:
+
+**Asset visibility.** You can't protect what you don't know about. IG1 starts with maintaining an inventory of authorized hardware and software. In practice, this means integrating MDM, network scanning, and endpoint management so you have a complete, accurate picture of what's in your environment.
+
+**Secure configurations.** Default configurations for operating systems, browsers, and cloud services are generally permissive. IG1 requires establishing and enforcing hardened configurations — disabling unused services, removing default credentials, applying vendor security benchmarks.
+
+**Data protection.** Encrypt sensitive data at rest and in transit. Implement DLP controls to understand where your sensitive data lives. Define data retention policies and enforce them.
+
+**Account and access management.** Use unique accounts per user, enforce MFA, and disable or remove accounts promptly when employees leave. These three things together block a significant proportion of credential-based attacks.
+
+**Email and web browser protections.** Configure anti-phishing, DMARC/DKIM/SPF, and content filtering. Phishing is still the leading initial access vector — IG1 treats it accordingly.
+
+**Vulnerability and patch management.** Perform automated vulnerability scanning and remediate critical findings within 30 days. IG1 doesn't require a sophisticated vulnerability management program, just consistent scanning and a defined remediation process.
+
+## Getting Started Without Getting Overwhelmed
+
+The practical approach: treat IG1 as a gap assessment checklist. Go through each of the 56 Safeguards and mark your current state: implemented, partially implemented, not implemented. You'll quickly see where the gaps concentrate.
+
+Then prioritize based on what your organization is most likely to be attacked through. For most mid-market companies: credential security and MFA, email protections, and patching are where attackers actually win. Start there.
+
+Build in measurement from the beginning. Track your IG1 completion percentage over time. Set a target date for full IG1 coverage. Trend it upward. This gives you something concrete to report to leadership and makes the work feel bounded.
+
+## When to Move to IG2
+
+Once IG1 is solidly in place — not partially implemented, but actually operational and enforced — IG2 is the right next step. IG2 is where you build the controls that matter for compliance: formal access review processes, detailed audit logging and log retention, incident response procedures, security awareness training programs, and controls for managing service providers.
+
+If you're pursuing SOC 2, preparing for a HIPAA audit, or responding to enterprise customer security questionnaires, IG2 alignment will cover most of what those processes require.
+
+The CIS Controls website (cisecurity.org) publishes mapping documents that show exactly which CIS Safeguards satisfy which requirements in NIST CSF, SOC 2, HIPAA, and other frameworks. If compliance is a driver, use those mappings to prioritize your IG2 work.
+
+Ready to assess your current security baseline against CIS Controls and build a realistic roadmap to IG1 compliance? [Schedule a free consultation with ProTechtive](/contact).
