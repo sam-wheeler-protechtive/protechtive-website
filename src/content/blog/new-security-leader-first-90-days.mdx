@@ -1,0 +1,67 @@
+---
+title: "The First 90 Days: How to Build a Security Program When You're Starting from Zero"
+date: "2026-11-09"
+excerpt: "Whether you've just hired a security leader or engaged a fractional CISO, the first 90 days set the direction of your entire program. Here's how to spend them wisely."
+tags: ["Security Program", "vCISO", "Risk Management", "Security Foundations", "CISO"]
+author: "Sam Wheeler"
+---
+
+Most companies that engage a fractional CISO or bring on their first security hire share the same starting condition: some tooling purchased over the years, a few policies nobody has looked at since they were written, a cyber insurance questionnaire they answered optimistically, and a genuine uncertainty about where the real risks actually are.
+
+That uncertainty is the right starting point. Pretending you understand your security posture before you've actually looked at it leads to expensive mistakes. The first 90 days of building a security program are about earning the right to have an opinion — and then acting on it.
+
+## Month 1: Understand Before You Build
+
+The worst thing a new security leader can do is spend the first month buying tools and writing policies. The best thing is to understand the actual state of the organization.
+
+**Take inventory.** You cannot protect what you don't know you have. This means hardware, software, cloud accounts, SaaS subscriptions, data stores, and the people who have access to each. Most organizations are surprised by what this surfaces — cloud accounts opened by a departed employee, SaaS tools running with admin credentials shared across a team, production databases nobody has reviewed access on in years.
+
+**Find the data.** Understand what personal information, financial data, and intellectual property your organization holds, where it lives, and how it flows. This isn't a full data classification project — not yet. It's a reconnaissance exercise to identify the assets that would cause real damage if compromised.
+
+**Talk to the business.** Security is only meaningful in the context of what the business depends on. Have conversations with operations, engineering, and finance leadership to understand what systems are truly critical to revenue and operations. These conversations also surface assumptions about what security already covers that are often incorrect.
+
+**Review what exists.** Read the policies, look at the existing tools, check what alerts are firing and who's responding to them. Don't judge — just document the gap between what the policies say and what's actually happening.
+
+By the end of month one, you should have a written assessment of your current state: what assets exist, what data you're protecting, what controls are in place, and where the most significant gaps are.
+
+## Month 2: Close the Critical Gaps
+
+The gap assessment will surface more problems than can be fixed quickly. The job in month two is prioritization — identifying the 10–15 issues that represent genuine, exploitable risk and moving on them.
+
+Regardless of what your assessment surfaces, certain fundamentals belong at the top of every list:
+
+**Multi-factor authentication on everything critical.** Credential-based attacks account for a substantial majority of initial access in breaches. MFA on email, identity providers, remote access, and administrative accounts is not optional.
+
+**Endpoint visibility and control.** You can't detect or contain an incident on a device you can't see. Endpoint detection and response (EDR) coverage on every managed device — not antivirus, EDR — is a baseline capability.
+
+**Backup integrity.** Most organizations have backups. Fewer have tested them recently. Fewer still have confirmed their backups are isolated from their production environment in a way that would survive a ransomware attack. Test your backups. Document what you can restore and in how long.
+
+**Logging you can actually use.** Critical systems — identity, email, cloud infrastructure, endpoint — should be generating logs that go somewhere central and that someone reviews. Logging without a process for acting on it isn't a control.
+
+The goal in month two is momentum and demonstrable progress. Document what you fixed, why you prioritized it, and what it changed about your risk posture.
+
+## Month 3: Build for Sustainability
+
+Controls that depend on heroic individual effort don't scale. Month three is about building the operational infrastructure that makes security repeatable.
+
+**Formalize a lightweight policy framework.** You need written policies for the things that will come up repeatedly: access control, acceptable use, incident response, vendor onboarding. These don't need to be long documents. They need to be accurate, approved by leadership, and actually followed.
+
+**Establish a vulnerability management process.** Automated scanning, defined severity SLAs (critical: 7 days, high: 30 days), and assigned ownership. The process matters more than the tool.
+
+**Build a reporting cadence.** Security leadership needs a regular way to communicate program status, risks, and progress to executive leadership and the board. Even a quarterly one-page summary creates accountability and surfaces security as a topic that leadership is informed about.
+
+**Define the roadmap.** At 90 days, you should be able to present: here's where the program was when we started, here's where it is today, and here's the 12-month plan to get it to where it needs to be. This roadmap becomes the basis for budget requests, resource planning, and ongoing measurement.
+
+## What to Avoid
+
+A few consistent mistakes that set programs back:
+
+**Buying tools before understanding risk.** Every security vendor has a compelling pitch. Most tools are genuinely useful for the right problem. But tools purchased before you understand your actual risk profile end up unused, misconfigured, or solving problems you don't have.
+
+**Writing policies before they can be enforced.** A policy that says "all production access requires MFA" when MFA isn't actually deployed creates a documentation liability and nothing else. Build the control, then write the policy that reflects it.
+
+**Trying to do everything at once.** A partially implemented security program is more dangerous than a focused one — it creates the appearance of coverage without the reality. Narrow focus and deep execution beats broad coverage and shallow implementation every time.
+
+---
+
+Ready to build a security program that's right-sized for your organization and built to last? [Schedule a free consultation with ProTechtive](/contact) — we help mid-market companies establish security foundations that hold up under audit, incident, and growth.
