@@ -1,0 +1,61 @@
+---
+title: "How to Implement a User Access Review Program for SOC 2 and Zero Trust"
+date: "2026-11-16"
+excerpt: "User access reviews are required for SOC 2 and central to Zero Trust, but most mid-market companies treat them as checkbox exercises. Here's how to do them right."
+tags: ["SOC 2", "Zero Trust", "Identity Governance", "Access Management"]
+author: "Sam Wheeler"
+---
+
+User access reviews are one of those controls that organizations tend to treat as a compliance checkbox. Someone exports a spreadsheet of users and permissions, a manager rubber-stamps it, and the reviewer marks it complete. That's not an access review — it's theater.
+
+Properly designed, access reviews are one of the highest-leverage controls in a security program. They directly limit the blast radius of compromised credentials and provide documented evidence of least-privilege enforcement. Here's how to build a program that delivers on that promise.
+
+## Why Access Reviews Matter More Than You Think
+
+The premise is simple: people change roles, leave the company, and accumulate permissions over time. Without a systematic review process, the result is entitlement creep — accounts with more access than their current role requires, active accounts for departed employees that were never deprovisioned, and service accounts with permissions nobody remembers granting.
+
+Entitlement creep is a gift to attackers. When a credential is compromised through phishing, password spray, or credential stuffing, the blast radius depends entirely on what that account can reach. An over-privileged account is a skeleton key. A least-privileged account is a liability that's contained.
+
+From a compliance standpoint, access reviews are required for SOC 2 under the Logical and Physical Access Controls criteria — specifically CC6.2 (access granted based on authorization) and CC6.3 (regular review and removal of unnecessary access). For Zero Trust architecture, access reviews are the enforcement mechanism for the least-privilege principle. They're how you operationalize the assumption that authorization requires continuous validation, not a one-time grant.
+
+## What a Real Access Review Program Looks Like
+
+A well-designed program has five components:
+
+**Review cadence.** Privileged accounts and critical systems warrant quarterly review. Standard user access across business applications can typically be reviewed semi-annually. High-risk systems — production infrastructure, financial platforms, source code repositories — should be reviewed more frequently if the risk profile justifies it.
+
+**Defined scope.** The program needs an authoritative inventory of systems in scope, the access types being reviewed, and an assigned owner for each system. Without a maintained scope definition, coverage gaps develop and reviews happen inconsistently.
+
+**Appropriate reviewers.** Business system access should be reviewed by the business owner of that system — the person who understands what access a given role actually requires. Having IT review HR system access is less effective than having the HR leader do it, because the IT reviewer doesn't know whether a specific user needs full access or read-only. Match the reviewer to the system.
+
+**A usable workflow.** Reviewers need a clear mechanism to certify access as appropriate or flag it for removal. If the process involves email threads and spreadsheets that require manual reconciliation, reviewers will rubber-stamp approvals just to get through it. The friction of a bad process drives rubber-stamping as reliably as the friction of a good one drives genuine review.
+
+**Closed-loop remediation.** A flag in an access review that doesn't result in actual deprovisioning is worse than useless — it creates documented evidence that you identified inappropriate access and didn't act. The review process must generate deprovisioning actions automatically and track completion. No open loops.
+
+## The Joiner-Mover-Leaver Process
+
+Access reviews are the periodic control. The continuous control is a well-designed joiner-mover-leaver (JML) process.
+
+**Joiners** should receive only the access their role requires on day one. Many organizations grant access reactively, on request, rather than from a defined role baseline. That approach generates entitlement drift from the start.
+
+**Movers** — employees who transfer or change roles — should have their previous access removed when new access is provisioned. This step is frequently missed, leaving employees with the cumulative access from every role they've held at the company.
+
+**Leavers** require same-day account deprovisioning. The commonly-cited standard is within 24 hours; best practice is before the employee leaves the building. Ghost accounts — active accounts for departed employees — are a persistent, preventable vulnerability.
+
+## Common Failure Modes to Avoid
+
+**Reviewing birthright access while ignoring elevated access.** The accounts that matter most in an access review are privileged accounts — admin roles, finance system access, cloud infrastructure permissions. Organizations that diligently review basic SaaS app access but ignore privileged entitlements have inverted their risk priorities.
+
+**Using only the HR system as the source of truth for offboarding.** HR records often lag the operational reality of a termination. Better design: an IT-managed offboarding workflow that's triggered at termination initiation, not when the HR record is eventually updated.
+
+**Skipping service accounts.** Service accounts — accounts used by systems and applications rather than humans — frequently accumulate excessive permissions and rarely appear in access reviews because they don't belong to an individual. They should be inventoried, owned by a named team, and reviewed on the same schedule as privileged human accounts.
+
+## Getting Started Without a Dedicated Identity Team
+
+If you don't have an identity team, start with two things: build a system inventory with assigned business owners, and establish a quarterly review schedule for your highest-risk systems — privileged accounts, production infrastructure, financial platforms, source code repositories.
+
+Purpose-built Identity Governance and Administration (IGA) tools like SailPoint, Saviynt, and Omada provide the workflow and audit trail that make access reviews scalable. If you're not ready to invest in a full IGA platform, Microsoft Entra ID Access Reviews and similar native directory features provide a solid starting point for organizations using Microsoft 365.
+
+A consistent, documented review process with closed-loop remediation for your critical systems is dramatically better than the spreadsheet approach most mid-market organizations are running today. Start there, then expand coverage as the program matures.
+
+Ready to build an access governance program that actually reduces risk? [Schedule a free consultation with ProTechtive](/contact) to assess where you stand and what it takes to get this right.
